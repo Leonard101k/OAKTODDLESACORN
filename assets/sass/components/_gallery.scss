@@ -1,0 +1,64 @@
+.gallery {
+    @extend %of-hidden;
+
+    &__wrapper {
+        @extend %text-center;
+    }
+
+    &__item {
+        @extend %p-rel;
+        a {
+            @extend %justify-center,
+            %p-rel;
+            @include add-prefix(transition, $transition);
+            display: block;
+
+            img {
+                border-radius: 8px;
+            }
+
+            &::after {
+                @extend %p-abs;
+                @include add-prefix(transition, $transition);
+                content: "";
+                left: 0;
+                bottom: 0;
+                height: 100%;
+                width: 100%;
+                // background: rgba(46, 132, 206, 0.7);  
+                background-color: rgba($brand-color-4, $alpha:.8);
+                border-radius: 8px;
+                opacity: 0;
+            }
+
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-view {
+            @extend %p-abs,
+                    %pos-center;
+                    opacity: 0;
+                    width: 100%;
+                    pointer-events: none;
+
+            .view-icon {
+                @include font-size(26px);
+                color: $white-color;
+            }
+
+        }
+
+        &:hover {
+            .gallery__item-view {
+                opacity: 1;
+
+            }
+
+
+        }
+    }
+}

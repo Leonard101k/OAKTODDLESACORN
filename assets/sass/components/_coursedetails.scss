@@ -1,0 +1,469 @@
+.coursedetails {
+
+    &--style1 {
+        .coursedetails {
+            &__header {
+                h3 {
+                    @extend %mb-20;
+                }
+
+                p {
+                    @extend %mb-20;
+                    color: $text-color;
+                }
+
+
+            }
+
+            &__focus {
+                @extend %d-flex,
+                %align-i-center;
+                gap: 2px;
+
+                @include breakpoint (sm) {
+                    gap: 5px;
+                }
+
+                &-rating {
+                    @extend %text-bold;
+                    color: $rating-color;
+                }
+
+                &-star {
+                    ul {
+                        @extend %d-flex,
+                        %align-i-center;
+
+                        li {
+                            @include font-size(12px);
+                            color: $rating-color;
+                        }
+                    }
+                }
+
+                &-count {
+                    @include font-size(18px);
+                    color: $brand1-text-1;
+                }
+
+                &-students {
+                    @include font-size(18px);
+                    color: $title-color;
+                }
+
+                // .star {
+                //     @extend %text-semibold;
+                //     color: $rating-color;
+
+                //     i,svg {
+                //         // @include font-size(14px);
+                //         color: $rating-color;
+
+                //     }
+                // }
+
+                // .count {
+                //     color: $brand1-text-1;
+                // }
+            }
+
+            &__info {
+
+                .nav {
+                    @extend %mt-50;
+
+                }
+
+                @include breakpoint(sm) {
+                    .nav {
+                        position: relative;
+                        justify-content: space-between;
+
+                        &:after {
+                            position: absolute;
+                            content: "";
+                            width: 100%;
+                            height: 1px;
+                            background-color: #D9D9D9;
+                            bottom: 1px;
+                            display: block;
+                        }
+                    }
+                }
+
+                ul {
+
+                    li {
+                        @extend %d-inline-grid,
+                        %align-i-center;
+
+
+                        &:not(:last-child) {
+                            @extend %me-20;
+
+                            @include breakpoint(sm) {
+                                margin-inline-end: 10px;
+                            }
+                        }
+
+                        button {
+                            @extend %of-hidden,
+                            %mb-20;
+                            color: $text-color-light;
+                            padding-inline: 0px;
+                            padding-top: 0;
+                            padding-bottom: 10px;
+                            z-index: +1;
+                            background: transparent;
+                            border-bottom: 3px solid transparent;
+
+
+                            @include breakpoint(sm) {
+                                margin-bottom: auto;
+                                padding-bottom: 25px;
+                            }
+
+                            &:hover,
+                            &.active {
+                                color: $brand1-text-1;
+                                z-index: +1;
+                                border-bottom: 3px solid $brand1-text-1;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__overview {
+                h5 {
+                    @extend %text-semibold,
+                    %mt-35,
+                    %mb-25;
+                }
+
+                >p {
+                    @extend %mb-40;
+                    color: $text-color;
+                }
+
+                .overview-list {
+                    li {
+                        @extend %d-flex;
+                        gap: 10px;
+                        color: $text-color;
+
+                        &:not(:last-child) {
+                            @extend %mb-20;
+                        }
+
+                        i,
+                        svg {
+                            color: #7044B0;
+                        }
+                    }
+                }
+
+                &-helpline {
+                    .thumb {
+                        @extend %of-hidden;
+                        border-radius: 8px;
+
+                        img {
+                            @extend %w-100;
+                            @include add-prefix(transition, $transition);
+                            object-fit: cover;
+
+                            &:hover {
+                                @include add-prefix(transform, scale(1.03));
+                            }
+                        }
+                    }
+
+                    .info {
+                        h6 {
+                            @extend %text-medium,
+                            %mb-5;
+                            @include font-size(18px);
+                        }
+
+                        a {
+                            color: $brand1-text-1;
+                        }
+                    }
+                }
+            }
+
+            &__thumb {
+                @extend %p-rel;
+                object-fit: cover;
+                transition: $transition;
+
+                img {
+                    width: 100%;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                }
+
+
+                &-playbtn {
+                    @extend %p-abs,
+                    %pos-center;
+
+                    a {
+                        img {
+                            object-fit: cover;
+                            transition: $transition;
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            img {
+                                @include add-prefix (transform, scale(1.03));
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            &__package {
+                border: 1px solid $border-color;
+                border-radius: 15px;
+                position: sticky;
+                top: 130px;
+            }
+
+            &__offer {
+                @extend %px-25,
+                %pt-25;
+
+                &-price {
+                    @extend %d-flex,
+                    %align-i-center,
+                    %mb-10;
+                    gap: 10px;
+
+                    h3 {
+                        @extend %mb-0;
+                    }
+
+                    span {
+                        color: $brand1-text-special;
+                    }
+                }
+
+                &-time {
+                    p {
+                        @extend %mb-30;
+                        // @include font-size(18px);
+                        color: $secondary-color-2;
+
+                        span {
+                            @extend %text-semibold,
+                            %ms-5;
+                        }
+                    }
+                }
+
+                &-social {
+                    @extend %my-30;
+
+                    .social {
+                        @extend %justify-center;
+                    }
+                }
+            }
+
+            &__footer {
+                @extend %d-flex,
+                %align-i-center,
+                %justify-between,
+                %px-25,
+                %pb-25,
+                %pt-15;
+                border-top: 1px solid $border-color;
+
+
+                p {
+                    @extend %mb-0;
+                    color: $title-color;
+                }
+
+                a {
+                    color: $brand1-text-1;
+
+                    i,
+                    svg {
+                        color: $brand1-text-1;
+                    }
+                }
+            }
+
+            &__coursereviews {
+                @extend %d-flex,
+                %align-i-center,
+                %justify-between,
+                %mt-40;
+
+                @include breakpoint(max-sm) {
+                    display: block;
+                }
+
+                @include breakpoint(sm) {
+                    display: block;
+                }
+
+                @include breakpoint(lg) {
+                    display: flex;
+                }
+
+                &-author {
+                    @extend %d-flex;
+                    gap: 20px;
+
+                }
+
+                &-thumb {
+                    img {
+                        border-radius: 99px;
+                        max-width: 60px;
+                    }
+
+                }
+
+                &-designation {
+                    h6 {
+                        @extend %mb-0;
+                        font-weight: 600;
+
+
+                    }
+
+                    span {
+                        @include font-size(14px);
+                        color: $text-color-light;
+                    }
+
+                    p {
+                        @extend %mt-10,
+                        %mb-0;
+                        max-inline-size: 60ch;
+                    }
+                }
+
+                &-rating {
+                    span {
+
+                        i,
+                        svg {
+                            font-size: 14px;
+                            color: $tertiary-color-2;
+
+                            &.mute {
+                                color: $text-color-light;
+                            }
+                        }
+                    }
+
+                    @include breakpoint(max-sm) {
+                        margin-block-start: 5px;
+                        margin-inline-start: 76px;
+                    }
+
+                    @include breakpoint(sm) {
+                        margin-block-start: 5px;
+                        margin-inline-start: 76px;
+                    }
+
+                    @include breakpoint(lg) {
+                        margin-block-start: 0px;
+                        margin-inline-start: 0px;
+                    }
+
+                }
+
+
+            }
+
+            &__reviewform {
+                background-color: $brand-bg-1;
+                padding: 30px;
+                margin-block-start: 30px;
+                border-radius: 16px;
+
+                h5 {
+                    margin-block-start: 0px;
+                }
+
+            }
+        }
+    }
+
+    &--style2 {
+        .coursedetails {
+            &__header {
+                @extend %align-i-center,
+                %justify-between,
+                %mb-30;
+
+                h3 {
+                    @extend %mb-15;
+
+                    @include breakpoint(sm) {
+                        margin-block-end: 0px;
+                    }
+                }
+
+                @include breakpoint(sm) {
+                    display: flex;
+                }
+
+            }
+
+            &__info {
+                @extend %d-inline-flex;
+                gap: 15px;
+
+                &-item {
+                    @extend %text-center,
+                    %pt-15,
+                    %px-20,
+                    %pb-10;
+                    border-radius: 16px;
+                    background-color: $white-color;
+
+                    h6 {
+                        @extend %text-semibold,
+                        %mb-0;
+                    }
+
+                    span {
+                        @include font-size(14px);
+                        color: $text-color-light;
+                    }
+                }
+            }
+
+            // &__curriculum {
+            //     .overview-list {
+            //         li {
+            //             @extend %d-flex;
+            //             gap: 10px;
+            //             color: $text-color;
+
+            //             &:not(:last-child) {
+            //                 @extend %mb-20;
+            //             }
+
+            //             i,svg {
+            //                 color: #7044B0;
+            //             }
+            //         }
+            //     }
+            // }
+        }
+    }
+
+}

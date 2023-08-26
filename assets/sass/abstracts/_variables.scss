@@ -1,0 +1,151 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+
+
+//*-----------------------------------
+//*** Custom variables for this template
+//*-----------------------------------
+
+
+
+//===================== Brand 1 variables start===================== //
+// theme colors
+$brand-color-1: #081A28;
+$secondary-color-1:#B1FDAF;
+$tertiary-color-1: #7044B0;
+
+// text colors 
+$brand-bg-1: #CDE5F829;
+$brand1-bg-2: #F7FBFE;
+$brand1-text-1: #299684;
+$rating-color:#ECC132;
+$brand1-text-special: #98A2B3;
+$border-color:#EAECF0;
+$brand-bg-course: rgba(103, 156, 197, 0.16);
+$contact-bg: rgba(205, 229, 248, 0.24);
+//===================== Brand 1 variables  end===================== //
+
+
+//=====================home2/ Brand 2 variables start===================== //
+// theme colors
+$brand-color-2: #125875;
+$secondary-color-2:#FF7350;
+$tertiary-color-2: #F4BD15;
+
+// text colors
+$brand2-bg-1: #D6F2FE;
+$brand2-bg-2: #1F6F90;
+// $text-color-light-2: #667085;
+
+$brand2-bg-4:rgba(214, 242, 254, 0.5);
+//===================== Brand 2 variables  end===================== //
+
+
+//===================== Brand 3 variables start===================== //
+// theme colors
+$brand-color-3: #463266;
+$secondary-color-3:#FF7350;
+// $tertiary-color-3: #7044B0;
+
+// text colors
+$brand3-bg-1: #FFF7F5;
+$brand3-bg-2: #0F7494;
+$brand3-bg-3: #F9FAFB;
+$brand3-bg-4: #60468A;
+$brand3-footer-color:#C7A7F8;
+//===================== Brand 3 variables  end===================== //
+
+
+//===================== Brand 4 variables start===================== //
+// theme colors
+$brand-color-4: #248D88;
+$secondary-color-4:#FED049;
+$tertiary-color-4: #68B984;
+
+// text colors
+$brand-bg-4: #F9FAFB;
+// $text-color-4: #475467;
+// $text-color-light-4: #667085;
+//===================== Brand 4 variables  end===================== //
+
+
+
+
+
+//===================== Common Variables =====================//
+
+$body-color: #344054;
+$body-color-dark: #8d85b3;
+
+// text colors
+$title-color:#101828;
+$text-color: #475467;
+$text-color-light: #667085;
+$footer-text-special: #bfbfbf;
+
+
+
+$form-focus:#366CD5;
+$white-color:#fff;
+$black-color:#000;
+
+// course color
+$course-color-1:#EBFEEA;
+$course-color-2:#FFE3EC;
+$course-color-3:#F2E9FF;
+$course-color-4: $secondary-color-4;
+
+
+
+$error: #F04438;
+$warning: #F79009;
+$success: #12B76A;
+$danger: #FF0000;
+
+//Additional Colors:
+$bg-light-color:#f5f5f6;
+$title-color-dark: #231f51;
+
+
+// social
+$facebook: #3D6AD6;
+$twitter: #1DA1F3;
+$linkedin: #0077B5;
+
+
+
+//Template Font family
+$title-font:'Poppins',
+sans-serif;
+$title-font1:'Solway',
+serif;
+$text-font:'Inter',
+sans-serif;
+
+
+//Template font sizes
+$fs-base: 16px !default;
+$fs-small:14px;
+
+$fs-h1: 80px;
+$fs-h2: 48px;
+$fs-h3: 36px;
+$fs-h4: 28px;
+$fs-h5: 24px;
+$fs-h6: 20px;
+
+
+//Template transition
+$transition:all .3s linear;
+
+
+
+
+//width variables
+
+// $sidenav-w: 280px;
+// $sidenav-gap:30px;
+// $body-gap:30px;

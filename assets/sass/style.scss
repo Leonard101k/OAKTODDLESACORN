@@ -1,0 +1,84 @@
+/*!
+Template Name: Educax - A Modern LMS and Kindergarten HTML Template for Online Learning and Personalized Education
+Template URI: 
+Author: thetork
+Author URI: https: //themeforest.net/user/thetork/portfolio
+Description: Educax is a versatile LMS and kindergarten Bootstrap 5.X HTML template designed for online learning and personalized education. With its clean and responsive design,
+Educax is perfect for creating a variety of educational websites,
+including e-learning platforms,
+personal coaching centers,
+kindergartens,
+and more
+Version: 1.0.0
+Text Domain: Educax
+Tags: LMS , Online learning managment.
+
+*/
+
+
+
+
+
+
+/*=====================================================================*/
+
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@import 'abstracts/extends',
+'abstracts/variables',
+'abstracts/functions',
+'abstracts/mixins';
+
+// 2. Vendors
+@import 'vendors/normalize',
+// 'vendors/text-rotator',
+'vendors/nice-select',
+'vendors/rfs';
+
+// 3. Base stuff
+@import 'base/fonts',
+'base/typography',
+'base/animations',
+'base/common',
+'base/helpers';
+
+
+// 4. Layout-related sections
+@import 'layout/header',
+'layout/banner',
+'layout/contact',
+'layout/account',
+'layout/footer';
+
+
+// 5. Components
+@import 'components/button',
+'components/preloader',
+'components/categories',
+'components/about',
+'components/course',
+'components/story',
+'components/team',
+'components/blog',
+'components/community',
+'components/social-link',
+'components/testimonial',
+'components/gallery',
+'components/partner',
+'components/counter',
+'components/feature',
+'components/coursedetails',
+'components/cta',
+'components/faq',
+'components/cart',
+'components/checkout',
+'components/sidebar',
+'components/review',
+'components/newsletter';
+
+// 6. Page-specific styles
+@import 'pages/home';
+
+// 7. Themes
+@import 'themes/theme';

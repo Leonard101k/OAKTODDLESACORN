@@ -1,0 +1,162 @@
+.counter {
+    @extend %of-hidden;
+
+    &--style1 {
+        .counter {
+            &__wrapper {
+                @extend %py-45;
+
+                @include breakpoint (md) {
+                    padding-block: 55px;
+                }
+
+                @include breakpoint (xl) {
+                    padding-block: 80px;
+                }
+            }
+
+            &__item {
+                &-inner {
+                    @extend %text-center;
+
+                }
+
+                &-thumb {
+                    @extend %mb-20;
+
+                    @include breakpoint (sm) {
+                        margin-block-end: 30px;
+                    }
+                }
+
+                &-content {
+                    h3 {
+                        @extend %mb-10;
+                        color: $white-color;
+
+                    }
+
+                    h5 {
+                        color: $white-color;
+                        font-weight: 500;
+
+                        @include breakpoint(max-lg) {
+                            @include font-size(18px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .col-lg-3 {
+            &:not(:last-child) {
+                .counter__item {
+                    @include breakpoint (lg) {
+                        position: relative;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            width: 2px;
+                            height: 101px;
+                            left: auto;
+                            right: 0;
+                            top: 30%;
+                            background-color: $brand2-bg-1;
+                            opacity: 0.5;
+
+                            // @include breakpoint(md) {
+                            //     width: 2px;
+                            //     height: 101px;
+                            //     left: auto;
+                            //     right: 0;
+                            //     top: 30%;
+                            // } 
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    &--style2 {
+        .counter {
+            &__wrapper {
+                @extend %py-45;
+
+                @include breakpoint (md) {
+                    padding-block: 55px;
+                }
+
+                @include breakpoint (xl) {
+                    padding-block: 80px;
+                }
+            }
+
+            &__item {
+
+                &-inner {
+                    @extend %text-center,
+                    %d-grid;
+                    gap: 20px;
+
+                    @include breakpoint(lg) {
+                        text-align: left;
+                        display: flex;
+                        gap: 25px;
+
+                    }
+                }
+
+                &-thumb {
+                    img {
+                        max-width: 60px;
+
+                        @include breakpoint (xl) {
+                            max-width: 100%;
+                        }
+                    }
+                }
+
+
+
+                &-content {
+                    h3 {
+                        @extend %mb-0;
+                        color: $white-color;
+
+                        @include breakpoint (lg) {
+                            margin-block-end: 5px;
+                        }
+
+                    }
+
+                    p {
+                        @extend %text-medium,
+                        %mb-0;
+                        @include font-size(18px);
+                        color: $white-color;
+                    }
+                }
+            }
+
+            // &:not(:last-child) {
+            //     .col-md-3 {
+            //         .counter__item {
+            //             &-thumb {
+            //                 @extend %mb-30;
+            //             }
+            //         }
+            //     }
+            // }
+
+            // &-thumb {
+            //     &:not(:last-child) {
+            //         @extend %mb-30;
+            //     }
+
+            // }
+        }
+    }
+}

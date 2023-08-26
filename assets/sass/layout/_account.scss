@@ -1,0 +1,179 @@
+.account {
+    @extend %of-hidden;
+
+
+    &__content {
+        max-inline-size: 535px;
+        margin-inline: auto;
+        @extend %p-10;
+    }
+
+    &__header {
+        @extend %text-center;
+
+        h4 {
+            @extend %mb-20;
+        }
+
+        p {
+            @include font-size(18px);
+            font-weight: 400;
+            @extend %mb-60;
+            color: $text-color;
+        }
+    }
+
+    &__form {
+        .form-label {
+            @extend %mb-5;
+            // @include font-size(16px);
+            font-weight: 500;
+            color: $text-color;
+        }
+
+        .input-group {
+            @include add-prefix(transition, $transition);
+            border: 1px solid rgba($text-color, $alpha:.3);
+            border-radius: .5rem;
+
+            // &-icon {
+            //     display: inline-grid;
+            //     place-items: center;
+            //     padding-inline: 1rem;
+            // }
+
+            &:focus-within {
+                border-color: $text-color;
+            }
+
+            .valid-tooltip,
+            .invalid-tooltip {
+                background-color: transparent;
+                top: 90%;
+            }
+
+            .valid-tooltip {
+                color: $success;
+            }
+
+            .invalid-tooltip {
+                color: $error;
+            }
+        }
+
+        .form-control {
+            border: none;
+            border-radius: 8px !important; 
+
+            &:focus {
+                box-shadow: none !important;
+            }
+        }
+
+        .showhide-pass { 
+            position: relative;
+        }
+
+        .toggle {
+            background: none;
+            border: none;
+            color: #7a7b7c;
+            font-weight: 600;
+            position: absolute;
+            right: .75em;
+            top: 1em;
+            z-index: 9;
+        }
+
+        &-passcheck {
+            @extend %d-flex,
+            %align-i-center,
+            %justify-between,
+            %mb-35,
+            %mt-35;
+            gap: 10px;
+
+            .form-check-input {
+                width: 1.2em;
+                height: 1.2em;
+                margin-inline-end: 3px;
+            }
+
+            .form-check-label {
+                @extend %text-regular;
+                @include font-size(18px);
+                color: $text-color-light;
+            }
+
+
+        }
+
+        button.trk-btn {
+            @include font-size(18px);
+        }
+
+        .default-btn {
+            @extend %w-100;
+        }
+
+        &-forgotpass {
+            a {
+                @extend %text-medium;
+                @include font-size(18px);
+                color: $form-focus;
+            }
+        }
+
+
+    }
+
+    &__social {
+        @extend %mt-20;
+
+        &-btn {
+            @include add-prefix(transition, $transition);
+            @extend %w-100,
+            %justify-center;
+            @extend %text-regular;
+            @include font-size(18px);
+            display: inline-flex;
+            background-color: $white-color;
+            padding: .7rem 2.25rem;
+            border: 1px solid rgba($text-color, $alpha:.3);
+            border-radius: .5rem;
+
+
+
+            @include breakpoint(xl) {
+                padding: 0.8rem 2.25rem;
+            }
+
+            span {
+                @extend %me-10,
+                %d-inline-block;
+            }
+
+            &:hover {
+                border-color: $text-color;
+            }
+        }
+    }
+
+    //toggle between signin and signup page
+    &__switch {
+        @extend %text-center,
+        %mt-30;
+
+        p {
+            @extend %mb-0, %text-regular;
+            @include font-size(18px);
+        }
+
+        a {
+            @extend %ms-5,
+            %d-inline-block;
+            @include font-size(18px);
+            color: $form-focus;
+        }
+    }
+}

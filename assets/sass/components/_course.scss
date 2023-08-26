@@ -1,0 +1,805 @@
+.course {
+  @extend %of-hidden;
+
+  &--style1 {
+    .course {
+      &__item {
+        @extend %of-hidden;
+        @include add-prefix(transition, $transition);
+        background-color: $white-color;
+        border-radius: 0.5rem;
+
+        &:hover {
+          .course__thumb {
+            img {
+              @include add-prefix(transform, scale(1.09));
+            }
+          }
+        }
+
+        //style 2
+        &--style2 {
+          background-color: rgba($black-color, $alpha: 0.2);
+        }
+      }
+
+      &__thumb {
+        @extend %p-rel,
+        %of-hidden;
+
+        img {
+          @extend %w-100;
+          @include add-prefix(transition, $transition);
+        }
+      }
+
+      &__content {
+        @extend %p-20;
+
+        @include breakpoint(lg) {
+          padding: 24px;
+        }
+
+        &-top {
+          @extend %d-flex,
+          %justify-between,
+          %mb-20;
+
+          h4 {
+            @extend %mb-15,
+            %text-clamp-2;
+            font-weight: 600;
+
+            &:hover {
+              a {
+                color: $brand-color-1;
+              }
+            }
+          }
+        }
+
+        h6 {
+          @extend %text-clamp-2;
+          font-weight: 600;
+        }
+
+        &-bottom {
+          @extend %flex,
+          %justify-between,
+          %align-i-center,
+          %mt-15;
+
+          &--border {
+            border-top: 1px solid rgba($brand-color-1, $alpha: 0.1);
+          }
+
+          a {
+            @extend %d-inline-flex,
+            %align-i-center;
+            gap: 10px;
+
+            img {
+              border-radius: 99px;
+            }
+          }
+
+          .course-price {
+            @extend %flex,
+            %align-i-center;
+            gap: 5px;
+
+            del {
+              @include font-size(14);
+              font-weight: 400;
+
+              @include breakpoint (lg) {
+                font-size: 12px;
+              }
+
+              @include breakpoint (xl) {
+                font-size: 14px;
+              }
+            }
+
+            span {
+              @include font-size(24px);
+              font-weight: 600;
+              color: $title-color;
+
+              @include breakpoint (lg) {
+                font-size: 20px;
+              }
+
+              @include breakpoint (xl) {
+                font-size: 24px;
+              }
+            }
+
+          }
+        }
+
+        .default-btn {
+          @extend %mt-10;
+        }
+      }
+
+      &__meta {
+        gap: 30px;
+
+        &-tag {
+          @extend %d-inline-block;
+          @include font-size(12px);
+          padding: 0.15rem 1rem;
+          border-radius: 50px;
+          color: $brand-color-1;
+          font-weight: 500;
+          text-transform: capitalize;
+          // background-color: rgba($brand-color-1, $alpha: .1);
+
+          &--cat1 {
+            background-color: $course-color-2;
+          }
+
+          &--cat2 {
+            background-color: $course-color-1;
+          }
+
+          &--cat3 {
+            background-color: $course-color-3;
+          }
+        }
+
+        &-comment {
+          @extend %p-rel;
+          color: $text-color;
+
+          span {
+            @include box(16px);
+            @include font-size(12px);
+            font-weight: 500;
+            display: inline-grid;
+            place-items: center;
+            background-color: $brand-color-1 !important;
+            color: $black-color;
+          }
+        }
+      }
+
+      &__view {
+        @extend %flex,
+        %justify-between,
+        %align-i-center,
+        %mb-30;
+        gap: 20px;
+
+        &-count {
+          p {
+            @extend %mb-0;
+            @include font-size(18px);
+            display: inline-flex;
+            align-items: center;
+
+            i,svg {
+              @extend %me-10;
+              color: $brand-color-1;
+            }
+          }
+        }
+
+        &-search {
+          .form-control {
+            border-radius: 0.5rem;
+          }
+
+          .search-icon {
+            background-color: $brand-color-1;
+            padding-inline: 1rem;
+            border-color: transparent;
+            color: $white-color;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+
+      &__btn {
+        @extend %p-abs;
+        @include add-prefix(transition, $transition);
+        @include font-size(14px);
+        border-radius: 50px;
+        padding: 0.35rem 0.75rem;
+        background-color: rgba($black-color, $alpha: 0.3);
+        color: $white-color;
+        border: 1.5px solid transparent;
+
+        transform: translate(-50%, -50%);
+        position: absolute;
+        content: "";
+        top: 13%;
+        right: -1%;
+
+        &:hover {
+          background-color: darken($secondary-color-1, $amount: 5);
+          color: $white-color;
+        }
+
+        &--add {
+          background-color: rgba($black-color, $alpha: 0.3);
+          color: $white-color;
+        }
+
+        &--save {
+          background-color: rgba($black-color, $alpha: 0.3);
+          color: $white-color;
+
+          &:hover,
+          &.saved {
+            background-color: $secondary-color-1;
+            color: $title-color;
+          }
+        }
+
+        &--active {
+          background-color: $secondary-color-1;
+          color: $title-color;
+        }
+      }
+
+      &__focus {
+        &-inner {
+          @extend %d-inline-flex,
+          %align-i-center;
+
+          img {
+            @extend %mx-5;
+          }
+        }
+      }
+
+      &__topbar {
+        @extend %d-grid;
+        gap: 15px;
+
+        @include breakpoint(md) {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        &-left {
+          .form-select {
+            border-radius: 15px;
+            padding: 18px 24px;
+            width: 160px;
+
+            @include breakpoint(xl) {
+              border-radius: 99px;
+            }
+
+            &.categories-filter {
+              @extend %p-15;
+              border-radius: 8px;
+
+              @include breakpoint(xl) {
+                border-radius: 8px;
+              }
+            }
+          }
+
+          .form-select:focus {
+            outline: 0;
+            box-shadow: none;
+            border: 1px solid rgba($brand-color-1, $alpha: 0.7);
+          }
+
+          .select:hover::after {
+            color: $secondary-color-1;
+          }
+        }
+
+        &-right {
+          .nav {
+            @extend %p-10;
+            background-color: $brand-bg-course;
+            border-radius: 20px;
+            gap: 10px;
+
+            @include breakpoint (sm) {
+              padding: 15px;
+            }
+
+            @include breakpoint (xl) {
+              padding: 10px;
+              border-radius: 99px;
+            }
+          }
+
+          ul {
+
+            @include breakpoint(sm) {
+              justify-content: left;
+            }
+
+            @include breakpoint(xl) {
+              justify-content: space-evenly;
+            }
+
+            li {
+              @extend %d-inline-grid,
+              %align-i-center;
+
+              // &:not(:last-child) {
+              //   @extend %me-10;
+              // }
+
+              button {
+                color: $text-color-light;
+                border-radius: 10px;
+
+                @include breakpoint(xl) {
+                  border-radius: 99px;
+                }
+
+                &:hover,
+                &.active {
+                  background-color: $brand-color-1;
+                  color: $white-color;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__wrapper {
+        .tab-content {
+          @extend %mt-65;
+        }
+      }
+    }
+  }
+
+  &--style2 {
+    .course {
+      &__item {
+        &-inner {
+          background-color: $white-color;
+          border-radius: 16px;
+
+        }
+      }
+
+      &__thumb {
+        @extend %p-25,
+        %p-rel;
+
+        &-inner {
+          @extend %of-hidden;
+          border-radius: 8px;
+          object-fit: cover;
+
+          img {
+            @extend %w-100;
+            @include add-prefix(transition, $transition);
+          }
+        }
+
+        &-add {
+          @extend %p-abs;
+          @include box(40px);
+          @include add-prefix(transform, translateY(-50%));
+          border-radius: 50%;
+          background-color: $brand-color-2;
+          border: 1px solid $brand-color-2;
+          color: $white-color;
+          transition: $transition;
+          display: grid;
+          left: 46%;
+          bottom: -5%;
+          place-items: center;
+          z-index: 1;
+
+          @include breakpoint(lg) {
+            left: auto;
+            bottom: 2%;
+            transform: rotate(0deg);
+            right: 46%;
+          }
+        }
+
+        &:hover {
+
+          .course__thumb-add {
+            background-color: $secondary-color-2;
+            border: $secondary-color-2;
+          }
+
+          img {
+            border-radius: 30px;
+            @include add-prefix(transform, scale(1.05));
+          }
+        }
+      }
+
+      &__content {
+        @extend %d-flex,
+        %p-rel,
+        %align-i-center,
+        %justify-between,
+        %px-25,
+        %pb-30;
+
+        &-details {
+          p {
+            @extend %mb-10;
+            @include font-size(14px);
+            color: $text-color-light;
+            text-transform: capitalize;
+          }
+
+          h6 {
+            a {
+              @extend %mb-10,
+              %text-clamp-1;
+              font-weight: 600;
+              transition: $transition;
+              max-inline-size: 16ch;
+
+              &:hover {
+                color: $secondary-color-2;
+                text-decoration: underline;
+              }
+            }
+
+          }
+        }
+
+        &-price {
+          h6 {
+            @extend %px-15,
+            %py-5;
+            font-weight: 600;
+            background-color: $brand2-bg-1;
+            border-radius: 8px;
+          }
+        }
+      }
+
+      &__focus {
+        @extend %d-inline-flex,
+        %align-i-center;
+
+        img {
+          @extend %mx-5;
+        }
+      }
+
+      // &:hover {
+      //   &.course__thumb-add {
+      //     background-color: $secondary-color-2;
+      //     border: $secondary-color-2;
+      //   }
+
+      //   &.course__thumb-inner {
+      //     img {
+      //       border-radius: 30px;
+      //       @include add-prefix(transform, scale(1.05));
+      //     }
+      //   }
+
+
+      //   &.course__content-details {
+      //     h6 {
+      //       color: $secondary-color-2;
+      //       text-decoration: underline;
+      //     }
+      //   }
+      // }
+    }
+  }
+
+  &--style3 {
+    .course {
+      &__wrapper {
+        .nav {
+          @extend %p-10;
+          background: rgba(255, 227, 220, 0.6);
+          gap: 10px;
+        }
+
+        ul {
+          @extend %justify-between;
+
+          @include breakpoint(sm) {
+            justify-content: left;
+          }
+
+          @include breakpoint(xl) {
+            justify-content: space-between;
+          }
+
+          li {
+            @extend %d-inline-grid,
+            %align-i-center;
+
+            // &:not(:last-child) { 
+            //   @extend %me-10;
+            // }
+
+            button {
+              color: $text-color-light;
+
+              &:hover,
+              &.active {
+                background-color: $secondary-color-3;
+                color: $white-color;
+              }
+            }
+          }
+        }
+
+        .tab-content {
+          @extend %mt-65;
+        }
+      }
+
+      &__item {
+        @extend %of-hidden;
+        @include add-prefix(transition, $transition);
+        background-color: $white-color;
+
+        &:hover {
+          .course__thumb {
+            img {
+              @include add-prefix(transform, scale(1.06));
+            }
+          }
+        }
+      }
+
+      &__thumb {
+        @extend %of-hidden;
+
+        img {
+          @extend %w-100;
+          @include add-prefix(transition, $transition);
+          object-fit: cover;
+        }
+      }
+
+      &__content {
+        @extend %p-20;
+
+        &-top {
+          @extend %d-flex,
+          %justify-between,
+          %mb-20;
+
+          h4 {
+            @extend %mb-15,
+            %text-clamp-2;
+            font-weight: 600;
+
+            &:hover {
+              a {
+                color: $brand-color-1;
+              }
+            }
+          }
+        }
+
+        h6 {
+          @extend %text-clamp-2,
+          %mb-20;
+          @include add-prefix(transition, $transition);
+          font-weight: 600;
+
+          :hover {
+            color: $brand-color-3;
+            // text-decoration: underline;
+          }
+        }
+
+        &-bottom {
+          @extend %d-flex,
+          %justify-between,
+          %align-i-center,
+          %pt-10;
+
+          &--border {
+            border-top: 1px solid rgba($brand-color-1, $alpha: 0.1);
+          }
+        }
+
+        &-enroll {
+          a {
+            span {
+              i,svg {
+                transform: rotate(-45deg);
+                color: $secondary-color-3;
+                @include add-prefix(transition, $transition);
+              }
+            }
+          }
+
+          &:hover {
+            a {
+              text-decoration: underline;
+
+              span {
+                i,svg {
+                  transform: rotate(0deg);
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          h6 {
+            color: $brand-color-3;
+            // text-decoration: underline;
+          }
+        }
+      }
+
+      &__focus {
+        @extend %d-inline-flex,
+        %align-i-center;
+        gap: 5px;
+
+        i,
+        svg {
+          color: $secondary-color-3;
+        }
+      }
+
+      &__price {
+        >p {
+          @extend %text-semibold,
+          %px-10,
+          %py-5;
+          @include font-size(20px);
+          font-family: $title-font;
+          background-color: $brand3-bg-2;
+          color: $white-color;
+        }
+      }
+
+      &__mentor {
+        @extend %d-flex,
+        %align-i-center;
+        gap: 8px;
+
+        img{
+          border-radius: 99px;
+        }
+      }
+    }
+  }
+
+  &--style4 {
+    padding-block: 160px;
+
+    @include breakpoint(lg) {
+      padding-block: 250px;
+    }
+
+    .course {
+      &__item {
+        @extend %of-hidden;
+        @include add-prefix(transition, $transition);
+        background-color: $white-color;
+        border-radius: 0.5rem;
+
+        &:hover {
+          .course__thumb {
+            img {
+              @include add-prefix(transform, scale(1.09));
+            }
+          }
+        }
+
+        //style 2
+        &--style2 {
+          background-color: rgba($black-color, $alpha: 0.2);
+        }
+      }
+
+      &__thumb {
+        @extend %p-rel,
+        %of-hidden;
+
+        img {
+          @extend %w-100;
+          @include add-prefix(transition, $transition);
+        }
+      }
+
+      &__author {
+        a {
+          @extend %d-inline-flex,
+          %align-i-center;
+          gap: 10px;
+          img{
+            border-radius: 99px;
+          }
+        }
+      }
+
+      &__content {
+        @extend %p-20;
+
+        @include breakpoint(lg) {
+          padding: 24px;
+        }
+
+        &-top {
+          @extend %d-flex,
+          %justify-between,
+          %mb-20;
+
+          h4 {
+            @extend %mb-15,
+            %text-clamp-2;
+            font-weight: 600;
+
+            &:hover {
+              a {
+                color: $brand-color-1;
+              }
+            }
+          }
+        }
+
+        h5 {
+          font-family: $title-font1;
+        }
+
+        &-footer {
+          @include font-size(16px);
+          font-weight: 700;
+          color: $brand-color-4;
+          @extend %flex,
+          %align-i-center,
+          %justify-between;
+          gap: 5px;
+
+          a {
+            color: inherit;
+          }
+
+          // @include breakpoint(sm) {
+          //   gap: 30px;
+          //   @include font-size(20px);
+          // }
+
+          // @include breakpoint(md) {
+          //   gap: 10px;
+          //   @include font-size(16px);
+          // }
+
+          // @include breakpoint(lg) {
+          //   gap: 5px;
+          //   @include font-size(16px);
+          // }
+
+          // @include breakpoint(xl) {
+          //   gap: 20px;
+          //   @include font-size(18px);
+          // }
+
+          // @include breakpoint(xxl) {
+          //   gap: 30px;
+          //   @include font-size(20px);
+          // }
+
+          span {
+            @extend %d-inline-flex,
+            %align-i-center;
+            gap: 5px;
+          }
+        }
+      }
+    }
+  }
+}

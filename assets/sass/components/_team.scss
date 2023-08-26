@@ -1,0 +1,271 @@
+.team {
+    @extend %of-hidden;
+
+    &--style1 {
+        .team {
+            &__item {
+                &-inner {
+                    @extend %p-rel,
+                    %of-hidden;
+                    border-radius: 15px;
+
+                    &::after {
+                        @extend %p-abs;
+                        @include add-prefix(transition, $transition);
+                        content: "";
+                        left: 0;
+                        bottom: 0;
+                        height: 0;
+                        width: 100%;
+                        background: linear-gradient(360deg, rgba(1, 11, 18, 0.7) -43.36%, rgba(2, 14, 23, 0) 100%);
+                        opacity: 0;
+
+
+                    }
+                }
+
+                &-thumb {
+                    @extend %of-hidden,
+                    %p-rel;
+                    border-radius: 20px;
+
+                    img {
+                        @extend %w-100;
+                        @include add-prefix(transition, $transition);
+                        object-fit: cover;
+                    }
+                }
+
+                &-content {
+                    &--style1 {
+                        @extend %p-abs;
+                        @include add-prefix(transition, $transition);
+                        color: $white-color;
+                        content: "";
+                        left: 0%;
+                        bottom: -10%;
+                        width: 100%;
+                        opacity: 0;
+                        visibility: none;
+                    }
+
+                    &--style2 {
+                        @extend %p-abs,
+                        %py-15;
+                        @include add-prefix(transition, $transition);
+                        color: $white-color;
+                        content: "";
+                        left: 0;
+                        bottom: -10%;
+                        width: 100%;
+                        background-color: rgba($color: $title-color, $alpha: .80);
+                        opacity: 0;
+                        visibility: none;
+                    }
+                }
+
+                &-author {
+                    @extend %text-center;
+
+                    h6 {
+                        @extend %mb-5;
+                        @include add-prefix(transition, $transition);
+                        color: $white-color;
+                    }
+
+                    p {
+                        color: rgba($white-color, $alpha:.8);
+                    }
+                }
+
+                &:hover {
+
+                    .team__item {
+                        &-inner {
+                            &::after {
+                                height: 100%;
+                                opacity: 1;
+                            }
+                        }
+
+                        &-thumb {
+                            img {
+                                @include add-prefix(transform, scale(1.05));
+                            }
+
+                        }
+
+                        &-author {
+                            h6 {
+                                a {
+                                    color: $white-color;
+                                }
+                            }
+                        }
+
+                        &-content {
+
+                            &--style2,
+                            &--style1 {
+                                opacity: 1;
+                                visibility: visible;
+                                bottom: 0;
+                                z-index: 1;
+                            }
+
+                        }
+                    }
+
+                }
+
+            }
+
+            &__header {
+                @extend %pe-20;
+
+                @include breakpoint(lg) {
+                    padding-inline-end: 0;
+                }
+
+                @include breakpoint(xl) {
+                    padding-inline-end: 20px;
+                }
+
+                h2 {
+                    @extend %mb-20;
+                }
+
+                p {
+                    @extend %mb-40,
+                    %text-medium;
+                    @include font-size(16px);
+                    color: $text-color;
+
+                    @include breakpoint(lg) {
+                        margin-block-end: 20px;
+                    }
+
+                    @include breakpoint(xl) {
+                        font-size: 18px;
+                        margin-block-end: 40px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    &--style2 {
+        .team {
+            &__item {
+                &-thumb {
+                    @extend %of-hidden;
+
+                    img {
+                        @extend %w-100;
+                        @include add-prefix(transition, $transition);
+                        object-fit: cover;
+                    }
+                }
+
+                &-author {
+                    @extend %text-center,
+                    %mt-20;
+
+                    h6 {
+                        @include add-prefix(transition, $transition);
+                    }
+                }
+
+                &:hover {
+
+                    .team__item {
+                        &-thumb {
+                            img {
+                                @include add-prefix(transform, scale(1.05));
+                            }
+                        }
+
+                        &-content {
+                            &--style2 {
+                                bottom: 0;
+                            }
+                        }
+
+                        &-author {
+                            h6 {
+                                a {
+                                    color: $brand-color-3;
+                                }
+
+
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            &__slider1 {
+                max-height: 1020px;
+            }
+
+            &__slider2 {
+                max-height: 1080px;
+            }
+        }
+    }
+
+    &--details {
+        .team {
+            &__thumb {
+                @extend %of-hidden;
+                border-radius: 20px;
+
+                img {
+                    @extend %w-100;
+                    @include add-prefix(transition, $transition);
+                    object-fit: cover;
+
+                    &:hover {
+                        @include add-prefix(transform, scale(1.05));
+                    }
+                }
+            }
+
+            &__content {
+                h4 {
+                    @extend %text-semibold;
+                }
+
+                .designation {
+                    @extend %mb-10;
+                    color: $text-color-light;
+                }
+
+                >span {
+                    @extend %text-semibold;
+                    color: $secondary-color-4;
+
+                    i,
+                    svg {
+                        color: $secondary-color-4;
+                    }
+                }
+
+                .info {
+                    @extend %mt-25;
+                }
+            }
+        }
+    }
+
+    &--home4 {
+        @include breakpoint (max-sm) {
+            background-image: none;
+            background-color: $secondary-color-4;
+        }
+    }
+
+} 

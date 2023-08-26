@@ -1,0 +1,224 @@
+//=============== Checkout Page =============
+.checkout {
+    &__details {
+        @extend %p-25;
+        background-color: rgba($border-color, $alpha:.5);
+        border-radius: 16px;
+
+        @include breakpoint(xl) {
+            padding: 30px;
+        }
+    }
+
+    &__title {
+        @extend %mb-20,
+        %p-rel;
+
+        h5 {
+            &::after {
+                @extend %p-abs;
+                content: "";
+                left: 0;
+                bottom: -40%;
+                height: 1px;
+                width: 100%;
+                background-color: $border-color;
+            }
+        }
+
+        p {
+            @extend %text-medium;
+            @include font-size(18px);
+            color: $title-color;
+        }
+    }
+
+    &__subtitle {
+        p {
+            @extend %mb-0,
+            %mt-40;
+            color: $title-color;
+        }
+    }
+
+}
+
+
+//order details
+.order {
+    @extend %p-25;
+    background-color: rgba($border-color, $alpha:.5);
+    border-radius: 16px;
+
+    @include breakpoint(xl) {
+        padding: 30px;
+    }
+
+    &__details {
+
+        .table {
+            thead {
+                th {
+                    @extend %px-0;
+                }
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid transparent;
+                }
+            }
+
+            tr {
+
+                td,
+                th {
+                    &:nth-child(2) {
+                        text-align: end;
+                    }
+
+                    th,
+                    td {
+                        text-align: start;
+                    }
+                }
+
+                td {
+                    @extend %px-0;
+
+                    .o-info {
+                        @extend %d-flex,
+                        %align-i-center;
+                        gap: 10px;
+
+                        .c-reviews {
+                            @extend %d-flex,
+                            %align-i-center,
+                            %mb-5;
+                            gap: 5px;
+
+                            ul {
+                                @extend %d-flex,
+                                %align-i-center;
+
+                                li {
+                                    @include font-size(10px);
+                                    color: $rating-color;
+
+                                    i,
+                                    svg {
+                                        &.mute {
+                                            color: $text-color;
+                                        }
+                                    }
+                                }
+                            }
+
+                            p {
+                                @extend %mb-0,
+                                %text-regular,
+                                %text-clamp-1;
+                                @include font-size(12px);
+                                color: $text-color-light;
+                            }
+                        }
+
+                        a {
+                            @extend %mb-0,
+                            %text-regular,
+                            %text-clamp-1;
+                            @include font-size(16px);
+                            color: $title-color;
+                        }
+                    }
+
+                    // &:nth-child(1) {
+                    //     max-width: 70px;
+                    // }
+
+                    img {
+                        max-width: 60px;
+                        border-radius: 8px;
+                    }
+                }
+
+            }
+
+            tbody {
+                th {
+                    @extend %px-0,
+                    %text-medium;
+
+                }
+            }
+
+            tfoot {
+                tr {
+                    border-bottom: 1px solid transparent;
+
+                    th {
+                        @extend %px-0;
+
+                        p {
+                            @extend %text-regular,
+                            %mb-0;
+                            @include font-size(14px);
+                            color: $text-color-light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__option {
+        &-title {
+            p {
+                @extend %mb-10,
+                %text-bold;
+            }
+
+        }
+
+        &-item {
+            @extend %p-15,
+            %d-flex,
+            %align-i-center,
+            %justify-between;
+            flex-wrap: wrap;
+            background-color: $white-color;
+            border-radius: 8px;
+
+            &:not(:last-child) {
+                @extend %mb-10;
+            }
+        }
+
+    }
+
+
+    &__check {
+        .form-check {
+            .form-check-label {
+                @include font-size(16px);
+            }
+        }
+
+    }
+
+}
+
+
+//===========order complete page
+// .order-complete {
+//     &__content {
+
+//         img,
+//         h3 {
+//             @extend %mb-20;
+//         }
+
+//         .default-btn {
+//             @extend %mt-20;
+//         }
+
+//     }
+// }

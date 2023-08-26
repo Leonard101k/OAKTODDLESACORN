@@ -1,0 +1,74 @@
+.studentreview {
+    &__item {
+        &-author{
+            @extend %p-25;
+            h6{
+                @extend  %text-medium;
+                @include font-size(18px);
+                font-family: $text-font;
+                color: $title-color;
+                margin-block-end: 7px;
+            }
+            span{
+                color: $text-color-light;
+            }
+        }
+    }
+
+    &__thumb {
+        @extend %p-rel;
+        object-fit: cover;
+        transition: $transition;
+
+        &-image {
+            width: 100%;
+            border-radius: 16px;
+        }
+
+        &-top {
+            @extend %p-abs, %d-flex, %align-i-center;
+            gap: 15px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            content: "";
+            top: 10%;
+            left: 36%;
+            @include breakpoint(max-sm){
+                left: 30%;
+            }
+            @include breakpoint(sm){
+                left: 35%;
+            }
+            @include breakpoint(md){
+                left: 33%;
+            }
+            p{
+                @extend %mb-0, %text-clamp-1;
+                color: $white-color;
+            }
+        }
+
+        &-playbtn {
+            @extend %p-abs,
+            %pos-center;
+            
+
+            a {
+                img {
+                    object-fit: cover;
+                    transition: $transition;
+                    overflow: hidden;
+                }
+            }
+
+            &:hover {
+                a {
+                    img {
+                        @include add-prefix (transform, scale(1.01));
+                    }
+
+                }
+            }
+        }
+    }
+}

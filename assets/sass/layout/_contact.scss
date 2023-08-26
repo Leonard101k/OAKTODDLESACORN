@@ -1,0 +1,88 @@
+.contact {
+  &__header {
+    @extend %mb-65;
+  }
+
+  &__item {
+    @extend %d-flex,
+    %align-i-center;
+    gap: 30px;
+
+    &:not(:last-child) {
+      @extend %mb-40;
+    }
+
+    &-thumb {
+      @extend %p-rel;
+      @include box(80px);
+      background-color: $contact-bg;
+      border-radius: 50px;
+
+      i,
+      svg {
+        @extend %p-abs,
+        %pos-center;
+        @include font-size(36px);
+        color: $brand-color-1;
+      }
+    }
+
+    &-content {
+      h5 {
+        @extend %text-semibold;
+      }
+
+      p {
+        max-inline-size: 30ch;
+        color: $text-color-light;
+      }
+    }
+  }
+
+  &__form {
+    @extend %p-30;
+    background-color: rgba($border-color, $alpha:.5);
+    border-radius: 16px;
+    @include breakpoint(md){
+      padding: 50px;
+    }
+    @include breakpoint(lg){
+      padding: 30px;
+    }
+    @include breakpoint(xl){
+      padding: 50px;
+    }
+
+    h3{
+      @extend %mb-10;
+    }
+    p{
+      @extend %mb-30;
+      color: $text-color;
+    }
+
+    .form-control{
+      &::placeholder{
+        color: $text-color-light;
+      }
+    }
+    .account__form-passcheck{
+      @extend %mt-15;
+    }
+    .form-check-label{
+      a{
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  &__map{
+    .map{
+          border-radius: 16px;
+            width: 100%;
+            height: 510px;
+    }
+
+  }
+}

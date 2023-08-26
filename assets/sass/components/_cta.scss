@@ -1,0 +1,90 @@
+.cta {
+  %__wrapper {
+    border-radius: 15px;
+  }
+
+  &__content {
+    &-inner {
+      .subtitle {
+        @extend %d-flex,
+        %align-i-center,
+        %justify-center,
+        %pt-75;
+        gap: 10px;
+
+        p {
+          @include font-size(20px);
+          font-weight: 600;
+          font-family: $title-font;
+          color: $white-color;
+        }
+      }
+
+      h2 {
+        @extend %pb-40;
+        color: $white-color;
+        max-inline-size: 18ch;
+        margin: auto;
+      }
+
+      .form {
+        @extend %pb-75;
+        max-width: 500px;
+        margin: auto;
+
+
+        @include breakpoint(sm) {
+          @include breakpoint (max-sm) {
+            max-width: 600px;
+          }
+        }
+
+        .input-group {
+          @extend %px-20;
+        }
+
+        .form-control {
+          background-color: #1A263E;
+          border-color: #1A263E;
+          color: $white-color;
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+          z-index: 1;
+
+          ::placeholder {
+            color: #fff;
+            opacity: 999;
+          }
+        }
+
+        .cta-btn {
+          padding: 20px;
+          border-top-right-radius: 12px;
+          border-bottom-right-radius: 12px;
+          background: $brand-color-2;
+          border-color: $brand-color-2;
+          @include font-size(16px);
+
+          @include breakpoint(sm) {
+            padding: 20px 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .form-control {
+    max-inline-size: 300px;
+    // padding: 1rem;
+    border-radius: 99px;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:placeholder {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+}

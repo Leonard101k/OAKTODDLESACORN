@@ -1,0 +1,112 @@
+.social {
+    @extend %flex;
+    @extend %align-i-center;
+    @extend %list-none;
+    @extend %ps-0;
+    @extend %mb-0;
+    gap: 15px;
+    &--style2{
+        gap: 25px;
+    }
+
+    &__link {
+        @extend %d-inline-block;
+        @extend %text-center;
+        @include add-prefix(transition, background-color .2s linear);
+        background-color: transparent;
+        // border: 2px solid rgba($white-color, $alpha: .70);
+        @include font-size(18px);
+
+        &--rounded1 {
+            background-color: $white-color;
+            @include box(35px);
+            line-height: 35px;
+            border-radius: 50px;
+            transition: $transition;
+
+            svg,
+            i {
+                color: $black-color;
+                font-size: inherit;
+            }
+        }
+
+        &--rounded4 {
+            background-color: $secondary-color-4;
+            @include box(35px);
+            line-height: 35px;
+            border-radius: 50px;
+            transition: $transition;
+
+            svg,
+            i {
+                color: $black-color;
+                font-size: inherit;
+            }
+        }
+
+        &--defult {
+            svg,
+            i {
+                @include font-size(20px);
+                @include add-prefix(transition, $transition);
+                color: $white-color;
+            }
+
+        }
+        &--rounded5 {
+            @include add-prefix(transition, $transition);
+            @include box(35px);
+            background-color: $brand-color-1;
+            line-height: 35px;
+            border-radius: 50px;
+
+            svg,
+            i {
+                color: $white-color;
+                font-size: inherit;
+            }
+        }
+
+
+
+        &:hover {
+            &.social__link--rounded1 {
+                background-color: $secondary-color-1;
+
+                svg,
+                i {
+                    color: $black-color;
+                }
+
+            }
+
+            &.social__link--rounded4 {
+                background-color: $title-color;
+
+                svg,
+                i {
+                    color: $white-color;
+                }
+            }
+
+            &.social__link--rounded5 {
+                background-color: $secondary-color-1;
+                svg,
+                i {
+                    color: $black-color;
+                }
+
+            }
+            &.social__link--defult {
+
+                svg,
+                i {
+                    // @include add-prefix(transform, scale(1.02));
+                    color: $secondary-color-3;
+                }
+            }
+
+        }
+    }
+}

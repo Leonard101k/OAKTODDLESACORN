@@ -1,0 +1,389 @@
+// background image use 
+.bg-image {
+    background-repeat: no-repeat;
+}
+
+// community review
+.community__reviews {
+    @extend %p-20;
+    max-width: 383px;
+    border-radius: 25px;
+    box-shadow: 16px 15px 35px 0px #5696C81A;
+
+    p {
+        @extend %mb-10;
+        @include font-size(20px);
+        font-weight: 600;
+        font-family: $title-font;
+
+        i,
+        svg {
+            color: red;
+        }
+    }
+
+    &-content {
+        @extend %d-flex;
+        gap: 30px;
+
+        ul {
+            @extend %d-flex,
+            %align-i-center;
+
+            li {
+                img {
+                    border-radius: 99px;
+                }
+
+                &:not(:nth-child(0)) {
+                    margin-right: -15px;
+                }
+            }
+        }
+
+        p {
+            @include font-size(36px);
+            font-weight: 700;
+            color: $title-color;
+        }
+    }
+
+}
+
+
+
+
+
+// slider pagination
+
+.slider__pagination-1 {
+    @extend %text-center,
+    %mt-65;
+
+    .swiper-pagination-bullet {
+        background-color: $white-color;
+        width: 15px;
+        border: none;
+        height: 6px;
+        border-radius: 10px;
+        transition: .3s linear;
+
+        &-active {
+            width: 30px
+        }
+
+    }
+}
+
+
+.slider__pagination-2 {
+    @extend %text-center,
+    %mt-65;
+
+    .swiper-pagination-bullet {
+        background-color: $secondary-color-4;
+        width: 13px;
+        height: 13px;
+        border: none;
+        border-radius: 50px;
+
+        &-active {
+            width: 16px;
+            height: 16px;
+            outline-style: dotted;
+            outline-color: $secondary-color-4;
+
+        }
+
+    }
+}
+
+.slider__pagination-3 {
+    @extend %text-center,
+    %mt-65;
+
+    .swiper-pagination-bullet {
+        background-color: $brand-color-2;
+        width: 6px;
+        border: none;
+        height: 6px;
+        border-radius: 10px;
+        transition: .3s linear;
+
+        &-active {
+            width: 25px
+        }
+
+    }
+}
+
+
+// ***************
+// tesimonial pagination
+
+
+// scrollTop
+.scrollToTop {
+    @include add-prefix(transition, $transition);
+    position: fixed;
+    // bottom: -20%;
+    bottom: 5%;
+    right: 5%;
+    z-index: 9;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    color: $body-color;
+
+    &--home1 {
+        background-color: $secondary-color-1;
+    }
+
+    &--home2 {
+        background-color: $secondary-color-2;
+
+        i,
+        svg {
+            color: $white-color;
+        }
+    }
+
+    &--home3 {
+        background-color: $secondary-color-3;
+
+        i,
+        svg {
+            color: $white-color;
+        }
+    }
+
+    &--home4 {
+        background-color: $secondary-color-4;
+    }
+
+    &:hover {
+        @include add-prefix (transform, translateY(-5px));
+        color: $body-color;
+    }
+
+
+}
+
+
+// form
+.form {
+    @extend %p-rel;
+    max-inline-size: 450px;
+    z-index: 1;
+
+    input,
+    textarea {
+        @extend %w-100;
+        @include add-prefix(transition, $transition);
+        border-radius: 8px;
+        color: $text-color;
+        padding: 1rem 2rem;
+
+        &.style1 {
+            border-radius: 0;
+            border: none;
+            background-color: $brand3-bg-4;
+            color: $white-color;
+
+            &::placeholder {
+                font-weight: 400;
+                color: rgba($white-color, $alpha:.5);
+            }
+
+        }
+
+        &::placeholder {
+            font-weight: 400;
+            color: rgba($text-color-light, $alpha:.3);
+
+        }
+
+        &:focus-within {
+            outline: none;
+            // border-color: rgba($theme-color, $alpha: .80);
+            border-color: none;
+            box-shadow: none;
+        }
+    }
+
+    input {
+        @extend %mb-20;
+    }
+
+    textarea {
+        @extend %mb-40;
+        min-height: 250px;
+    }
+}
+
+
+.form-control {
+    background-color: $white-color;
+    border-color: $border-color;
+    padding: 15px 24px;
+    border-radius: 8px;
+
+    @include breakpoint(xl) {
+        // padding: 0.8rem 1.25rem;
+        padding: 17px 24px;
+    }
+
+    &:focus {
+        box-shadow: none;
+        border-color: rgba($brand-color-1, $alpha: 0.50);
+    }
+}
+
+.form-check {
+    &-input {
+        &:focus {
+            box-shadow: none;
+        }
+
+        &:checked {
+            background-color: $brand-color-1;
+            border-color: $brand-color-1;
+        }
+    }
+
+    &-label {
+        color: $text-color !important
+    }
+}
+
+
+
+
+// pagination start here
+.paginations {
+    margin: 40px 0;
+
+    @include breakpoint(lg) {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        li {
+            padding: 5px;
+
+            a {
+                width: 46px;
+                height: 46px;
+                align-items: center;
+                justify-content: center;
+                background: $white-color;
+                box-shadow: 0 3px 4px rgba(10, 31, 68, .1);
+                color: $brand-color-1;
+                font-weight: 700;
+                z-index: 1;
+                @extend %p-rel,
+                %d-flex;
+                // @include border-radius(50%);
+                @include add-prefix(transition, $transition);
+                border-radius: 8px;
+                border: 1px solid rgba($brand-color-1, $alpha: 0.20);
+
+                &.active,
+                &:hover {
+                    color: $white-color;
+                    background: $brand-color-1;
+                }
+
+                &.dot {
+                    color: $brand-color-1;
+                    font-weight: 700;
+
+                    &:hover {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.searchbar {
+    @extend %w-100,
+    %h-100;
+    background-color: rgba($brand-color-1, $alpha: 0.50);
+    backdrop-filter: blur(15px);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+
+    &.show {
+        display: block;
+    }
+
+    &__wrapper {
+        @extend %p-rel,
+        %w-100,
+        %h-100;
+        display: grid;
+        place-items: center;
+    }
+
+    &__inner {
+        max-inline-size: 600px;
+        margin-inline: auto;
+    }
+
+    &__close {
+        @extend %p-abs,
+        %c-pointer;
+        @include box(40px);
+        background-color: rgba($white-color, $alpha:.5);
+        border-radius: 50%;
+        color: red;
+        display: grid;
+        place-items: center;
+        top: 5%;
+        right: 5%;
+
+    }
+}
+
+
+// course searce
+.course__search {
+    form {
+        @extend %p-rel;
+        background-color: $white-color;
+        border-radius: 8px;
+
+        input {
+            background-color: $brand-bg-1;
+            @extend %p-15;
+        }
+
+        button {
+            @extend %p-rel;
+            content: "";
+            padding: 18px 30px;
+            top: 2%;
+            right: 0;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+            background-color: $brand-color-1;
+            color: $white-color;
+
+            // @include transform(translateY(-50%));
+            i,
+            svg {
+                @include font-size(20px);
+            }
+
+        }
+    }
+}

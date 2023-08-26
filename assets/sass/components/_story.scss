@@ -1,0 +1,68 @@
+.story {
+    @extend %of-hidden;
+    &__thumb {
+        &-inner {
+            @extend %p-rel;
+            object-fit: cover;
+            transition: $transition;
+
+            // &:hover {
+            //     @include add-prefix (transform, scale(1.06));
+            // }
+            img{
+                border-radius: 16px;
+            }
+        }
+
+        &-playbtn { 
+            @extend %p-abs,
+            %pos-center;
+            width: 60px;
+
+
+            @include breakpoint(sm) {
+                width: 80px;
+                margin: 0 auto;
+            }
+
+            @include breakpoint(md) {
+                width: 100px;
+                margin: 0 auto;
+            }
+
+            @include breakpoint(lg) {
+                width: 120px;
+                margin: 0 auto;
+            }
+            @include breakpoint(xl) {
+                width: 140px;
+                margin: 0 auto;
+            }
+
+            @include breakpoint(xxl) {
+                width: auto;
+            }
+
+            a {
+                img {
+                    object-fit: cover;
+                    transition: $transition;
+                }
+            }
+
+            &:hover {
+                a {
+                    img {
+                        @include add-prefix (transform, scale(1.03));
+                        @include breakpoint(sm){
+                            @include add-prefix (transform, scale(1.05));
+                        }
+                    }
+
+                }
+            }
+
+        }
+ 
+    }
+}

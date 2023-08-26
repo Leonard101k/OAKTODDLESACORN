@@ -1,0 +1,780 @@
+// ===============       *************      ================ //
+// This file contained all styles related header section
+// ===============       *************      ================ //
+
+//  --------------  >>>  header style start here <<< ------------- //
+.header-section {
+  // @extend %p-rel;
+
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  background: transparent;
+
+  &--style2 {
+    @extend %p-abs;
+    content: "";
+    width: 100%;
+  }
+
+  &.header-fixed {
+    @extend %w-100;
+    @include add-prefix(animation, fadeInDown 0.5s);
+    position: fixed;
+    top: 0;
+    left: 0;
+    // border-bottom: 1px solid $secondary-color-1;
+    box-shadow: 0px 5px 10px -5px rgba($black-color, $alpha: 0.3);
+    z-index: 999;
+
+    background-color: $brand-color-1;
+
+    &.header-section {
+
+      &.home2,
+      &.home3 {
+        background-color: $white-color;
+      }
+
+      &.home4 {
+        background-color: $brand-color-4;
+      }
+    }
+
+    // background: rgba($white-color, $alpha: 0.1);
+    // backdrop-filter: blur(20px);
+    // -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+.header-wrapper {
+  @extend %flex;
+  @extend %justify-between;
+  @extend %align-i-center;
+  padding-block: 20px;
+
+  @include breakpoint(sm) {
+    position: relative;
+  }
+
+  @include breakpoint(md) {
+    padding-block: 20px;
+  }
+
+  .header-start {
+    &--style1 {
+      @extend %flex,
+      %align-i-end,
+      %justify-between;
+
+      // @include breakpoint(lg) {
+      //   min-width: 80%;
+      // }
+
+      @include breakpoint(xl) {
+        min-width: 75%;
+      }
+    }
+
+    &--style2 {
+      @extend %flex,
+      %align-i-center;
+
+      @include breakpoint(lg) {
+        gap: 10px;
+      }
+
+      @include breakpoint(xl) {
+        gap: 30px;
+      }
+
+      @include breakpoint(xxl) {
+        gap: 80px;
+      }
+    }
+  }
+
+  .logo {
+    a {
+      @extend %d-block;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    @include breakpoint(max-sm) {
+      width: 160px;
+    }
+
+    @include breakpoint(max-xl) {
+      @include breakpoint(lg) {
+        width: 200px;
+      }
+    }
+  }
+
+  .menu-area {
+    @extend %flex;
+    @extend %align-i-center;
+
+    .header-btn {
+      @include breakpoint(max-md) {
+        display: none;
+      }
+
+      @extend %flex;
+      @extend %align-i-center;
+      column-gap: 20px;
+    }
+  }
+}
+
+.menu {
+  @extend %flex,
+  %mb-0;
+  column-gap: 10px;
+
+  // @include breakpoint(lg) {
+  //   margin-right: 50px;
+  // }
+
+  >li {
+    >a {
+      @include font-size(18px);
+      padding: 15px 22px;
+      text-transform: capitalize;
+      font-family: $text-font;
+      font-weight: 500;
+
+      i {
+        margin-right: 5px;
+      }
+
+      &:after {
+        right: 11px;
+      }
+
+      &::before {
+        right: 15px;
+      }
+    }
+
+  }
+
+  &--style1 {
+    li {
+      a {
+        color: $white-color;
+      }
+    }
+  }
+
+  &--style2 {
+    >li {
+      >a {
+        color: $title-color;
+      }
+    }
+  }
+
+  @include breakpoint(xl) {
+    li {
+      position: relative;
+
+      .submenu {
+        @include add-prefix(transition, $transition);
+        @include add-prefix(transform, translateY(35px));
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 9;
+        background: $white-color;
+        width: 220px;
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
+        border-radius: 0.4rem;
+
+        li {
+          padding: 0;
+
+          a {
+            @include font-size(18px);
+            padding: 10px 20px;
+            text-transform: capitalize;
+            font-family: $text-font;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 500;
+            color: $title-color;
+            border-bottom: 1px solid rgba($white-color, $alpha: 0.05);
+            border-radius: 0.3rem;
+            transition: $transition;
+
+            &:hover,
+            &.active {
+              background: $white-color;
+              padding-left: 22px;
+              color: $black-color;
+
+              &:after,
+              &:before {
+                background: $white-color;
+              }
+            }
+          }
+
+          &:last-child {
+            a {
+              border-bottom: none;
+            }
+          }
+
+          .submenu {
+            left: 100%;
+            top: 0;
+          }
+        }
+      }
+
+      &:hover {
+        >.submenu {
+          -webkit-transform: translateY(15px);
+          -ms-transform: translateY(15px);
+          transform: translateY(15px);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    @include breakpoint(max-xl) {
+      li {
+        a {
+          padding: 10px 12px;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(max-xl) {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    overflow: auto;
+    max-height: 400px;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    transform-origin: top;
+    z-index: 999;
+    //glassmorphism
+    background: rgba($white-color, $alpha: 0.99);
+    -webkit-backdrop-filter: blur(20px);
+
+    li {
+      width: 100%;
+      padding: 0;
+
+      a {
+        display: block;
+        padding: 10px 25px;
+        font-size: 15px;
+        text-transform: capitalize;
+        border-top: 1px solid rgba($black-color, $alpha: 0.1);
+        color: $title-color;
+
+        &:hover {
+          background: rgba($white-color, $alpha: 0.6);
+        }
+      }
+
+      .submenu {
+        padding-left: 20px;
+        display: none;
+
+        li {
+          width: 100%;
+
+          a {
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    &.active {
+      -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
+      transform: scaleY(1);
+      box-shadow: 0 5px 10px -3px rgba($black-color, $alpha: 0.1);
+    }
+  }
+}
+
+.header-bar {
+  @extend %p-rel;
+  @extend %c-pointer;
+  width: 25px;
+  height: 20px;
+  @extend %ms-30;
+
+  @include breakpoint (md) {
+    width: 30px;
+    height: 24px;
+  }
+
+  span {
+    @extend %p-abs;
+    @extend %d-inline-block;
+    @extend %w-100;
+    @include add-prefix(transition, $transition);
+    background-color: $secondary-color-1;
+    border-radius: 5px;
+    height: 3px;
+
+
+
+
+    left: 0;
+
+    &:first-child {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: 52%;
+      transform: translateY(-65%);
+    }
+
+    &:last-child {
+      bottom: 0;
+    }
+  }
+
+  &.header-bar {
+    &.home1 {
+      span {
+        background-color: $white-color;
+      }
+    }
+
+    &.home2 {
+      span {
+        background-color: $black-color;
+      }
+    }
+
+    &.home3 {
+      span {
+        background-color: $black-color;
+      }
+    }
+
+    &.home4 {
+      span {
+        background-color: $white-color;
+      }
+    }
+
+  }
+
+  &.active {
+    span {
+      &:first-child {
+        @include add-prefix(transform, rotate(45deg) translate(3px, 9px));
+
+        @include breakpoint(md) {
+          @include add-prefix(transform, rotate(45deg) translate(3px, 12px));
+        }
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        @include add-prefix(transform, rotate(-45deg) translate(3px, -9px));
+
+        @include breakpoint(md) {
+          @include add-prefix(transform, rotate(-45deg) translate(3px, -12px));
+        }
+      }
+    }
+  }
+
+  @include breakpoint(max-sm) {
+    width: 15px;
+    height: 16px;
+    margin-right: 20px;
+
+    span {
+      height: 2px;
+      width: 20px;
+    }
+
+    &.active {
+      span {
+        &:first-child {
+          @include add-prefix(transform, rotate(45deg) translate(4px, 6px));
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:last-child {
+          @include add-prefix(transform, rotate(-45deg) translate(4px, -6px));
+        }
+      }
+    }
+  }
+}
+
+.menu-item-has-children {
+  >a {
+    @extend %p-rel;
+    @include add-prefix(transition, $transition);
+
+    &::after {
+      @extend %p-abs;
+      content: "";
+      top: 50%;
+      transform: translateY(-50%);
+      right: 25px;
+      width: 10px;
+      height: 2px;
+      background-color: currentColor;
+    }
+
+    &::before {
+      @extend %p-abs;
+      content: "";
+      top: 50%;
+      transform: translateY(-50%);
+      right: 29px;
+      width: 2px;
+      height: 10px;
+      background-color: currentColor;
+      @include add-prefix(transition, $transition);
+    }
+
+    @include breakpoint(max-xl) {
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px !important;
+        width: 10px;
+        height: 2px;
+        background-color: currentColor;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 24px !important;
+        width: 2px;
+        height: 10px;
+        background-color: currentColor;
+        @include add-prefix(transition, $transition);
+      }
+    }
+
+    @include breakpoint(xl) {
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: -2px !important;
+        width: 10px;
+        height: 2px;
+        background-color: currentColor;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2px !important;
+        width: 2px;
+        height: 10px;
+        background-color: currentColor;
+        @include add-prefix(transition, $transition);
+      }
+    }
+
+
+    @include breakpoint(xxl) {
+      &:after {
+        content: "";
+        right: 2px !important;
+      }
+
+      &:before {
+        content: "";
+        right: 6px !important;
+      }
+    }
+  }
+
+
+  &.open {
+    >a {
+      &:before {
+        transform: rotate(90deg);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+//  --------------  >>> section header style start here <<< ------------- //
+.section-header {
+  @extend %mb-40;
+
+  @include breakpoint(lg) {
+    margin-bottom: 64px;
+  }
+
+  h2 {
+    @extend %mb-20;
+  }
+
+  .about-title {
+    @include breakpoint (md) {
+      font-size: 24px;
+    }
+
+    @include breakpoint (lg) {
+      font-size: 28px;
+    }
+
+    @include breakpoint (xl) {
+      font-size: 36px;
+    }
+
+    @include breakpoint (xxl) {
+      font-size: 48px;
+    }
+  }
+
+  h6 {
+    font-weight: 600;
+  }
+
+  p {
+    font-weight: 500;
+
+    &.style2 {
+      @include font-size(18px);
+
+      @include breakpoint(md) {
+        max-inline-size: 65ch;
+        margin: 0 auto;
+      }
+
+      @include breakpoint(lg) {
+        max-inline-size: 70ch;
+        // font-size: 18px;
+      }
+    }
+
+    &.style3 {
+      @include breakpoint(md) {
+        max-inline-size: 50ch;
+      }
+    }
+
+    &.style4 {
+      @include breakpoint(md) {
+        max-inline-size: 50ch;
+        margin: 0 auto;
+      }
+
+      @include breakpoint(lg) {
+        max-inline-size: 55ch;
+        font-size: 18px;
+      }
+    }
+
+    &.mute {
+      color: $text-color;
+    }
+  }
+
+  a {
+    @extend %mt-30;
+
+    @include breakpoint(lg) {
+      margin-top: 0px;
+    }
+
+    @include breakpoint(xl) {
+      margin-top: 45px;
+    }
+  }
+
+  &--dark {
+    color: $white-color;
+
+    h2 {
+      color: $white-color;
+    }
+  }
+
+  &--max20 {
+    h2 {
+      max-inline-size: 20ch;
+      margin: auto;
+    }
+  }
+}
+
+
+
+.subtitle {
+  @extend %d-flex,
+  %align-i-center;
+  gap: 10px;
+
+
+
+  p {
+    @include font-size(20px);
+    font-weight: 600;
+    font-family: $title-font;
+  }
+
+  &--style2 {
+    @extend %justify-center;
+    color: $secondary-color-2;
+
+  }
+
+  &--style3 {
+    p {
+      @include font-size(18px);
+      font-weight: 500;
+      font-family: $title-font;
+      color: $secondary-color-2;
+    }
+
+  }
+
+  &--style4 {
+    p {
+      @extend %text-medium;
+      @include font-size(18px);
+      color: $title-color;
+      text-transform: uppercase;
+    }
+
+    p::before {
+      content: "";
+      margin-right: 10px;
+      background-color: $black-color;
+      border: 2px solid $black-color;
+    }
+  }
+
+  &--style5 {
+    @extend %text-medium;
+    @include font-size(18px);
+    color: $title-color;
+    text-transform: uppercase;
+  }
+}
+
+//  --------------  >>> page header style start here <<< ------------- //
+.pageheader {
+  padding-block-start: 140px;
+  padding-block-end: 80px;
+  background-size: cover;
+  background-position: center;
+
+  @include breakpoint (sm) {
+    padding-block-start: 155px;
+    padding-block-end: 100px;
+  }
+
+  @include breakpoint(lg) {
+    padding-block-start: 180px;
+    padding-block-end: 120px;
+  }
+
+  @include breakpoint(xxl) {
+    padding-block-start: 200px;
+    padding-block-end: 120px;
+  }
+
+  &__content {
+    @extend %text-center;
+
+    h2 {
+      @extend %mb-10;
+      color: $white-color;
+
+      @include breakpoint (sm) {
+        margin-block-end: 15px;
+      }
+
+      // @include breakpoint (lg){
+      //    margin-block-end: 20px;
+      // }
+    }
+
+    .breadcrumb {
+      @extend %justify-center;
+
+      .breadcrumb-item {
+        text-transform: capitalize;
+        @extend %text-medium;
+        @include font-size(18px);
+        color: $white-color;
+
+        a {
+          @extend %text-medium;
+          @include font-size(18px);
+          color: $white-color;
+        }
+
+        &::before {
+          color: $white-color;
+        }
+      }
+    }
+  }
+
+  // .breadcrumb-item {
+  //     @include breakpoint(lg) {
+  //         @include font-size(18px);
+  //     }
+
+  //     &:before {
+  //         color: currentColor;
+  //     }
+
+  //     &.active,
+  //     &:hover {
+  //         color: $brand-color-1;
+  //     }
+
+  // }
+}

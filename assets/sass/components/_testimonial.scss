@@ -1,0 +1,429 @@
+.testimonial {
+  @extend %of-hidden;
+
+  &--style1 {
+    .testimonial {
+      &__item {
+        @extend %text-center;
+        color: $white-color;
+        background-color: $brand-color-1;
+
+        &-content {
+          span {
+
+            i,
+            svg {
+              @include font-size(70px);
+              @extend %mb-40;
+              color: $secondary-color-1;
+            }
+          }
+
+          blockquote {
+            p {
+              @extend %text-regular;
+              @include font-size(32px);
+              color: $brand1-text-special;
+              max-inline-size: 53ch;
+              margin: 0 auto;
+
+              @include breakpoint(max-lg) {
+                @include font-size(24px)
+              }
+
+            }
+          }
+
+          // h3 {
+          //   @extend %text-center;
+          //   font-weight: 400;
+          //   color: $white-color;
+
+          // }
+
+        }
+
+        &-author {
+          @extend %mt-40;
+
+          >p {
+            @extend %mb-10;
+            @include font-size(20px);
+            font-weight: 600;
+          }
+        }
+      }
+
+      &__author {
+        @extend %p-5;
+        max-width: 90%;
+
+        @include breakpoint(sm) {
+          max-width: 70%;
+        }
+
+        @include breakpoint(md) {
+          max-width: 65%;
+        }
+
+        @include breakpoint(lg) {
+          max-width: 55%;
+        }
+
+        @include breakpoint(xl) {
+          max-width: 45%;
+        }
+
+        &-thumb {
+          @include add-prefix(transition, $transition);
+          aspect-ratio: 1/1;
+          border: 1px solid transparent;
+          border-radius: 50%;
+          cursor: pointer;
+          display: grid;
+          place-items: center;
+          // padding: 5px;
+
+          img {
+            border-radius: 99px;
+            max-inline-size: 85%;
+          }
+        }
+
+        .swiper-slide {
+          &-thumb-active {
+            .testimonial__author-thumb {
+              border: 1px solid $secondary-color-1;
+
+              img {
+                border-radius: 99px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.brand-4 {
+      .testimonial__item {
+        background-color: $brand-color-4;
+
+        &-content {
+          blockquote {
+            p {
+
+              color: $white-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--style2 {
+    .testimonial {
+      @extend %of-hidden;
+
+      // // background: rgba($brand2-bg-1, $alpha:.5);
+      // // background-color: rgba($brand2-bg-1, $alpha:0.5);
+      // background-color: $brand2-bg-1;
+      &__wrapper {
+        @extend %p-rel;
+      }
+
+      &__item {
+        &-inner {
+          @extend %py-40,
+          %px-30;
+          background-color: $white-color;
+          border-radius: 16px;
+        }
+
+        &-content {
+          span {
+            @extend %mb-20;
+
+            i,
+            svg {
+              @include font-size(70px);
+              color: $brand-color-2;
+            }
+          }
+
+        }
+      }
+
+      &__footer {
+        @extend %d-flex,
+        %align-i-center,
+        %justify-between,
+        %mt-40;
+
+        @include breakpoint(max-sm) {
+          display: block;
+        }
+
+        @include breakpoint(sm) {
+          display: block;
+        }
+
+        @include breakpoint(lg) {
+          display: flex;
+        }
+
+      }
+
+      &__author {
+        @extend %d-flex,
+        %align-i-center;
+        gap: 20px;
+
+        &-thumb {
+          img {
+            border-radius: 99px;
+            max-width: 60px;
+          }
+
+        }
+
+        &-designation {
+          h6 {
+            @extend %mb-0;
+            font-weight: 600;
+
+
+          }
+
+          span {
+            @include font-size(14px);
+            color: $text-color-light;
+          }
+        }
+      }
+
+      &__rating {
+        span {
+
+          i,
+          svg {
+            @include font-size(16px);
+            color: $tertiary-color-2;
+          }
+        }
+
+        @include breakpoint(max-sm) {
+          font-size: 12px;
+          margin-block-start: 5px;
+          margin-inline-start: 76px;
+        }
+
+        @include breakpoint(sm) {
+          margin-block-start: 5px;
+          margin-inline-start: 76px;
+        }
+
+        @include breakpoint(lg) {
+          margin-block-start: 0px;
+          margin-inline-start: 0px;
+        }
+
+      }
+
+      &__shape {
+        &-item {
+          @extend %p-abs;
+
+          &:nth-child(1) {
+            @extend %d-none;
+            width: 100px;
+            bottom: -5%;
+            left: -5%;
+
+            &.banner__shape-item--animation {
+              @include animation(floating 2s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+            }
+
+            @include breakpoint(md) {
+              display: block;
+            }
+
+            @include breakpoint(lg) {
+              width: 150px;
+            }
+
+            @include breakpoint(xl) {
+              width: auto;
+            }
+          }
+
+          &:nth-child(2) {
+            @extend %d-none;
+            width: 100px;
+            bottom: -5%;
+            right: -5%;
+
+            &.banner__shape-item--animation {
+              @include animation(floating 2s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+            }
+
+            @include breakpoint(md) {
+              display: block;
+            }
+
+            @include breakpoint(lg) {
+              width: 150px;
+            }
+
+            @include breakpoint(xl) {
+              width: auto;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  &--style3 {
+    .testimonial {
+      &__writer {
+        @extend %mb-25;
+
+        @include breakpoint(lg) {
+          margin-block-end: 15px;
+        }
+
+        @include breakpoint(xl) {
+          margin-block-end: 65px
+        }
+
+        h5 {
+          @extend %text-semibold;
+        }
+
+        p {
+          @extend %mb-10;
+          color: $text-color-light;
+        }
+
+        >span {
+
+          i,
+          svg {
+            color: $secondary-color-3;
+          }
+        }
+
+      }
+
+      &__content {
+        blockquote {
+          p {
+            @include font-size(18px);
+          }
+
+        }
+
+        .quote {
+          @extend %text-right,
+          %d-inherit;
+
+          i,
+          svg {
+            @include font-size(70px);
+            color: $brand-color-3;
+          }
+        }
+      }
+
+      &__thumb {
+        @extend %p-rel,
+        %text-center;
+        object-fit: cover;
+        transition: $transition;
+
+        &-playbtn {
+          @extend %p-abs,
+          %pos-center;
+
+          p {
+            @extend %mb-5;
+            @include font-size(18px);
+            color: $white-color;
+          }
+
+          span {
+            @include font-size(14px);
+            color: $secondary-color-3;
+          }
+
+          a {
+            img {
+              @extend %mb-10;
+              object-fit: cover;
+              transition: $transition;
+              width: 60px;
+
+
+
+
+              @include breakpoint(sm) {
+                width: auto;
+              }
+
+              @include breakpoint(md) {
+                width: 50px;
+              }
+
+              @include breakpoint(lg) {
+                width: auto;
+              }
+            }
+          }
+
+          &:hover {
+            a {
+              img {
+                @include add-prefix (transform, scale(1.05));
+              }
+
+            }
+          }
+
+        }
+      }
+
+      &__storyteller {
+        @extend %d-flex,
+        %align-i-center,
+        %p-15,
+        %c-pointer;
+        @include add-prefix(transition, $transition);
+        gap: 15px;
+
+        &-content {
+          h6 {
+            @extend %text-semibold;
+          }
+
+          p {
+            color: $text-color-light;
+          }
+        }
+
+      }
+
+      &__author3 {
+        .swiper-slide-thumb {
+          &-active {
+            background-color: $white-color;
+          }
+        }
+      }
+
+
+
+    }
+  }
+
+}

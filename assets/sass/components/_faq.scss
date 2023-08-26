@@ -1,0 +1,131 @@
+.accordion {
+  &__item {
+    @extend %of-hidden;
+    border-radius: .5rem;
+    background-color: $white-color;
+
+    &__button,
+    &__body {
+      background-color: rgba($white-color, $alpha: .09);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+  }
+
+
+  &__button {
+    @extend %w-100;
+    @extend %text-left;
+    @extend %d-flex;
+    @extend %justify-between,
+    %p-25;
+    background-color: $white-color;
+    border: none;
+    box-shadow: 4px 8px 20px 0px #3E8DC814;
+
+
+
+    .lesson-name {
+      @extend %text-regular;
+      @include font-size(20px);
+      color: $brand-color-1;
+      font-family: $title-font;
+    }
+
+    .lesson {
+      @extend %d-flex,
+      %align-i-center;
+
+      .lesson-number {
+        @extend %me-20,
+        %d-none;
+        color: $text-color;
+
+        @include breakpoint(sm) {
+          display: block;
+        }
+
+      }
+    }
+
+
+    .plus-icon {
+      @extend %p-rel;
+      @include box(14px);
+      // max-width: 140px;
+      display: none;
+
+      @include breakpoint(sm) {
+        display: initial;
+      }
+
+      &:before,
+      &:after {
+        @extend %p-abs;
+        content: "";
+        background-color: $text-color;
+      }
+
+      &::before {
+        @include add-prefix(transform, translateY(-50%));
+        width: 14px;
+        height: 2px;
+        top: 50%;
+      }
+
+    }
+
+    &.collapsed {
+      color: $text-color;
+
+
+      .plus-icon {
+        &::before {
+          background-color: $text-color;
+        }
+
+        &::after {
+          @include add-prefix(transform, translateY(-50%));
+          height: 14px;
+          width: 2px;
+          top: 50%;
+          left: 6px;
+          background-color: $text-color;
+        }
+      }
+    }
+  }
+
+  &__body {
+    @extend %p-30;
+    border: 1px solid rgba(95, 164, 218, 0.4);
+    border-top: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    .overview-list {
+      li {
+        @extend %d-block;
+        gap: 10px;
+        color: $text-color;
+
+        &:not(:last-child) {
+          @extend %mb-20;
+        }
+
+        i,
+        svg {
+          @extend %me-5;
+        }
+
+        a {
+          transition: $transition;
+
+          &:hover {
+            color: $brand1-text-1;
+          }
+        }
+      }
+    }
+  }
+}

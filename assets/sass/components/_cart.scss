@@ -1,0 +1,355 @@
+//=========== Cart page =============
+// cart page start here
+.cart {
+    &__top {
+        @include breakpoint(max-md) {
+            overflow-x: auto;
+            margin-bottom: 40px;
+
+            &::-webkit-scrollbar {
+                width: .5em;
+            }
+
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 6px rgba($white-color, $alpha: .30);
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $brand-color-1;
+                border-radius: 10px;
+            }
+        }
+
+        table {
+            @extend %w-100;
+            margin-bottom: 40px;
+            @extend %text-semibold;
+
+            @include breakpoint(max-md) {
+                width: 720px;
+            }
+
+            thead {
+
+                tr {
+                    // border: 1px solid $border-color;
+                    border-radius: 8px;
+
+                    th {
+                        @extend %p-25;
+                        background-color: rgba($border-color, $alpha:.5);
+
+                        &:first-child {
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                        }
+
+                        &:nth-child(3) {
+                            @extend %text-center;
+                        }
+
+                        &:last-child {
+                            @extend %text-right;
+                            border-top-right-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                background-color: $white-color;
+
+                tr {
+                    td {
+                        @extend %p-20;
+                        border: none;
+
+                        &:last-child {
+                            @extend %text-right;
+                        }
+
+                        &.course-item {
+                            @extend %flex;
+                            @extend %align-i-center;
+
+                            .c-thumb {
+                                width: 90px;
+
+                                img {
+                                    border-radius: 8px;
+                                }
+                            }
+
+                            .c-content {
+                                width: calc(100% - 90px);
+                                @extend %ps-10;
+
+                                a {
+                                    @extend %text-medium,
+                                    %text-clamp-1;
+                                    color: $title-color;
+                                    @include font-size(18px);
+                                    @include add-prefix(transition, $transition);
+
+                                    &:hover {
+                                        color: $brand-color-1;
+                                    }
+                                }
+
+                                .c-reviews {
+                                    @extend %d-flex,
+                                    %align-i-center,
+                                    %mb-5;
+                                    gap: 5px;
+
+                                    ul {
+                                        @extend %d-flex,
+                                        %align-i-center;
+
+                                        li {
+                                            @include font-size(12px);
+                                            color: $rating-color;
+
+                                            i,svg {
+                                                &.mute {
+                                                    color: $text-color;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    p {
+                                        @extend %mb-0,
+                                        %text-regular,
+                                        %text-clamp-1;
+                                        @include font-size(14px);
+                                        color: $text-color-light;
+                                    }
+                                }
+                            }
+
+
+                        }
+
+                        &.unit-price {
+                            del {
+                                @extend %text-regular;
+                                @include font-size(14px);
+                                color: $text-color-light;
+                            }
+                        }
+
+                        &.course-delete {
+                            a {
+                                color: rgba($title-color, $alpha: .80);
+                                @include font-size(18px);
+                                @include add-prefix(transition, $transition);
+
+                                &:hover {
+                                    color: $danger;
+                                }
+
+                            }
+                        }
+
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        @extend %p-30;
+        background-color: rgba($border-color, $alpha:.5);
+        border-radius: 16px;
+        position: sticky;
+        top: 130px;
+
+        &-coupon {
+            @extend %mb-30;
+
+            p {
+                @extend %text-medium;
+                @include font-size(18px);
+
+            }
+        }
+
+        &-checkoutbox {
+
+            .cart-checkout {
+                @extend %w-100,
+                %d-flex;
+
+                @include breakpoint(sm) {
+                    gap: 20px;
+                }
+
+
+                @include breakpoint(lg) {
+                    max-width: 390px;
+                    text-align: right;
+                    justify-content: flex-end;
+                }
+
+                input {
+                    color: $brand-color-1;
+                }
+
+                input[type="submit"] {
+                    padding: 10px 20px;
+                    @extend %mb-0;
+                    width: auto;
+                    // @extend %pointer;
+                    background: rgba($brand-color-1, $alpha: .10);
+                    border: 1px solid rgba($brand-color-1, $alpha: .10);
+                    @include add-prefix(transition, $transition);
+                    border-radius: 3px;
+
+
+                    @include breakpoint(max-sm) {
+                        width: 100%;
+                        margin-bottom: 15px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: $brand-color-1;
+                        border-color: $brand-color-1;
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+
+        &-shipingbox {
+            ul {
+                li {
+                    span {
+                        @extend %text-medium;
+                        @include font-size(18px);
+
+                    }
+                }
+            }
+
+            .calculate-shiping {
+                @include breakpoint(max-md) {
+                    margin-bottom: 30px;
+                }
+
+                h4 {
+                    @extend %mb-25;
+                }
+
+
+                input {
+                    @include add-prefix(transition, $transition);
+                    border-color: rgba($brand-color-1, $alpha: .40);
+                    border-radius: 5px;
+
+                    &:focus {
+                        border-color: $brand-color-1;
+                    }
+                }
+            }
+
+            .cart-overview {
+                h4 {
+                    @extend %mb-30,
+                    %p-rel;
+
+                    &::after {
+                        @extend %p-abs;
+                        content: "";
+                        left: 0;
+                        bottom: -40%;
+                        height: 1px;
+                        width: 100%;
+                        background-color: $border-color;
+                    }
+                }
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        @extend %list-none,
+                        %align-i-center,
+                        %flex,
+                        %justify-between,
+                        %py-10;
+                        border: none;
+
+                        .pull-right {
+                            @extend %mb-0;
+                            color: $brand-color-1;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// cart page + - start here
+// .cart-plus-minus {
+//     border: 1px solid $border-color;
+//     border-radius: 8px;
+//     overflow: hidden;
+//     width: 120px;
+//     margin: 0 auto;
+//     position: relative;
+
+//     .dec.qtybutton {
+//         left: 0;
+//         top: 0;
+//     }
+
+//     .cart-plus-minus-box {
+//         border: medium none;
+//         color: $title-color;
+//         float: left;
+//         font-size: 16px;
+//         height: 40px;
+//         margin: 0;
+//         text-align: center;
+//         width: 120px;
+//         outline: none;
+//     }
+
+//     .qtybutton {
+//         @include font-size(18px);
+//         color: $title-color;
+//         cursor: pointer;
+//         float: inherit;
+//         font-weight: 600;
+//         line-height: 40px;
+//         margin: 0;
+//         position: absolute;
+//         text-align: center;
+//         transition: all 0.3s ease 0s;
+//         width: 40px;
+//         height: 40px;
+
+//         &:hover {
+//             background: $brand-color-1;
+//             color: $white-color;
+//         }
+//     }
+
+//     .inc.qtybutton {
+//         height: 40px;
+//         right: 0;
+//         top: 0;
+//     }
+// } 

@@ -1,0 +1,329 @@
+.footer {
+    @extend %of-hidden;
+    color: $white-color;
+    font-weight: 400;
+
+    &__upper {
+        @extend %pb-65;
+        border-bottom: 1px solid rgba($white-color, $alpha: .30);
+    }
+
+    &__cta {
+        &-content {
+            h2 {
+                @extend %mb-10;
+                color: $white-color;
+            }
+        }
+
+        &-form {
+            .cta-btn {
+                color: $white-color;
+                padding: 1.25rem 1.5rem;
+            }
+        }
+    }
+
+    &__top {
+        &--style1 {
+            padding-top: 200px;
+
+            @include breakpoint(sm) {
+                padding-block-start: 250px;
+            }
+
+            @include breakpoint(lg) {
+                padding-block-start: 332px;
+            }
+        }
+
+        &--style2 {
+            @extend %pt-65;
+        }
+
+    }
+
+    &__about {
+        &-logo {
+            img {
+                @extend %mb-25;
+            }
+
+        }
+
+        &-moto {
+            // max-inline-size: 30ch;
+            margin-block-end: 0;
+            color: $footer-text-special;
+
+            @include breakpoint(md) {
+                max-inline-size: 30ch;
+            }
+        }
+
+        &-item {
+            &:not(:last-child) {
+                @extend %mb-20;
+            }
+
+            img {
+                @extend %me-10;
+            }
+        }
+
+        &-inner {
+            @extend %d-flex;
+            align-items: start;
+
+            @include breakpoint(xl) {
+                gap: 5px;
+            }
+
+            img {
+                @extend %mt-5;
+            }
+
+            .info,
+            a {
+                color: $footer-text-special;
+            }
+        }
+    }
+
+    &__links {
+        &-tittle {
+            h6 {
+                color: $white-color;
+                @extend %mb-25;
+
+                @include breakpoint(sm) {
+                    margin-block-end: 30px
+                }
+            }
+        }
+
+        &-content {
+            @extend %mt-25;
+
+            img {
+                @extend %me-5;
+                @extend %mb-10;
+            }
+
+
+            .form-control {
+                padding: 0.8rem 1.5rem;
+                border: 1px solid rgba($white-color, $alpha: .90);
+                // background-color: $bg-color;
+
+                &:focus {
+                    box-shadow: none;
+                    border-color: $secondary-color-1;
+                }
+            }
+
+
+
+        }
+
+        button {
+            background: $secondary-color-1;
+            color: $white-color;
+            padding: 0.8rem 1.25rem;
+            border: none;
+
+
+            i,
+            svg {
+                @include font-size(20px);
+            }
+        }
+
+    }
+
+    &__linklist {
+        &-item {
+            &:not(:last-child) {
+                @extend %mb-10;
+
+                @include breakpoint(md) {
+                    margin-block-end: 10px;
+                }
+
+                @include breakpoint(lg) {
+                    margin-block-end: 15px;
+                }
+            }
+
+            p {
+                color: $footer-text-special;
+            }
+
+            a {
+                @include add-prefix(transition, $transition);
+                color: $footer-text-special;
+                @extend %p-rel,
+                %d-inline-block;
+
+                &::after {
+                    @extend %p-abs;
+                    @include add-prefix(transform, translateY(-50%));
+                    content: "";
+                    transition: $transition;
+                    top: 50%;
+                    left: 0;
+                    width: 10px;
+                    height: 2px;
+                    background-color: $white-color;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    @include add-prefix(transform, translateX(10px));
+
+                    &::after {
+                        opacity: 1;
+                        left: -12px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__post {
+        .footer {
+            &__wrapper {
+                ul {
+                    li {
+                        @extend %d-flex,
+                        %align-i-center;
+                        @extend %mb-20;
+                        @extend %pb-20;
+                        gap: 15px;
+
+                        &:last-child {
+                            border-bottom: none !important;
+                            @extend %mb-0;
+                            @extend %pb-0;
+                        }
+
+                        &:hover {
+                            .thumb {
+                                img {
+                                    @include add-prefix(transform, scale(1.1));
+                                }
+                            }
+                        }
+
+                        .thumb {
+                            @extend %of-hidden;
+
+                            a {
+                                width: 80px;
+
+
+                                img {
+                                    @extend %of-hidden;
+                                    @include add-prefix(transition, $transition);
+                                }
+                            }
+                        }
+
+                        .content {
+                            width: calc(100% - 80px);
+
+                            p {
+                                @extend %mb-5;
+                                @include font-size(16px);
+
+                                a {
+                                    @extend %text-clamp-1,
+                                    %mb-0;
+                                    @include font-size(18px);
+                                    color: $white-color;
+                                }
+                            }
+
+                            .date {
+                                color: $brand3-footer-color;
+
+                                i {
+                                    @extend %me-5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__end {
+        border-top: 1px solid rgba($white-color, $alpha: .30);
+        color: $footer-text-special;
+        @include font-size(14px);
+
+        @include breakpoint(sm) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-copyright {
+            @extend %mt-25,
+            %mb-30;
+        }
+
+        &-links {
+            @extend %d-flex,
+            %align-i-center,
+            %mt-25,
+            %mb-30;
+
+            @include breakpoint (max-sm) {
+                justify-content: space-between;
+            }
+
+            @include breakpoint(sm) {
+                gap: 10px;
+            }
+
+            @include breakpoint(md) {
+                gap: 20px;
+            }
+
+        }
+
+        &-item {
+            a {
+                color: $footer-text-special;
+            }
+        }
+    }
+
+    &__lower {
+        background-color: $brand3-bg-4;
+        color: $footer-text-special;
+
+        &-copyright {
+            @extend %py-25;
+
+        }
+    }
+
+
+    &.brand-2 {
+
+        p,
+        a {
+            color: rgba($white-color, $alpha: .70);
+        }
+    }
+
+    &.brand-4 {
+
+        p,
+        a {
+            color: $white-color;
+        }
+    }
+}

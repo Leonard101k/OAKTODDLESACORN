@@ -1,0 +1,128 @@
+.community {
+    @extend %of-hidden;
+
+
+    &--style1 {
+        .community {
+            &__wrapper {
+                @extend %text-center;
+            }
+
+
+            &__reviews {
+                @extend %text-center,
+                %p-rel;
+                background-color: $white-color;
+                margin-inline: auto;
+                z-index: 1;
+
+                @include breakpoint(sm) {
+                    margin-block-end: -74px;
+                }
+            }
+        }
+    }
+
+    &--style2 {
+        .community {
+            &__wrapper {
+                border-radius: 15px;
+            }
+
+            &__content {
+                @extend %px-30, %pt-40, %pb-40;
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+
+                @include breakpoint(lg) {
+                    padding: 0;
+                }
+
+                @include breakpoint(xl) {
+                    padding-inline: 50px;
+                }
+
+                &-inner {
+
+                    .join-btn {
+                        padding: 8px 24px;
+                        background-color: $white-color;
+                        border-radius: 8px;
+                    }
+
+                    h2 {
+                        @extend %mt-20,
+                        %mb-20;
+                    }
+
+                    a.trk-btn {
+                        @extend %mt-25;
+                    }
+
+                    @include breakpoint(lg) {
+                        @include breakpoint(max-xl) {
+                            padding: 15px 30px;
+
+                            h2 {
+                                @include font-size(36px);
+                                margin: 15px 0;
+                            }
+
+                            a.trk-btn {
+                                margin-block-start: 15px;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            &__thumb {
+                &-inner {
+                    @extend %p-rel;
+                    object-fit: cover;
+                    transition: $transition;
+
+                    img {
+                        width: 100%;
+                        border-bottom-left-radius: 15px;
+                        border-bottom-right-radius: 15px;
+
+                        @include breakpoint(lg) {
+                            border-bottom-left-radius: 0px;
+                            border-top-right-radius: 15px;
+                            border-bottom-right-radius: 15px;
+                        }
+
+                    }
+                }
+
+                &-playbtn {
+                    @extend %p-abs,
+                    %pos-center;
+
+                    a {
+                        img {
+                            object-fit: cover;
+                            transition: $transition;
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            img {
+                                @include add-prefix (transform, scale(1.03));
+
+                                @include breakpoint(sm) {
+                                    @include add-prefix (transform, scale(1.05));
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

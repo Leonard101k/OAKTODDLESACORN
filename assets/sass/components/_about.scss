@@ -1,0 +1,464 @@
+.about {
+    @extend %of-hidden;
+
+    &--style1 {
+        .about {
+            &__thumb {
+                &-image {
+                    @extend %p-rel;
+
+                    >img {
+                        border-radius: 24px;
+                    }
+                }
+
+                &-video {
+                    @extend %p-abs,
+                    %p-rel;
+                    transform: translate(-50%, 0%);
+                    position: absolute;
+                    content: "";
+                    bottom: -21%;
+                    left: 50%;
+
+
+                    @include breakpoint(md) {
+                        transform: translate(13%, -13%);
+                        position: absolute;
+                        content: "";
+                        bottom: 7%;
+                        right: 0%;
+                    }
+                    img{
+                        border-radius: 16px;
+                    }
+
+
+                }
+
+                &-plybtn {
+                    @extend %p-abs,
+                    %pos-center;
+
+                    a {
+                        img {
+                            object-fit: cover;
+                            transition: $transition;
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            img {
+                                @include add-prefix (transform, scale(1.03));
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            &__content {
+                &-inner {
+                    @extend %pt-100;
+
+                    @include breakpoint(md) {
+                        padding-block-start: 20px;
+                    }
+
+                    @include breakpoint(lg) {
+                        padding-block-start: auto;
+                        padding-inline-start: 50px;
+                    }
+
+                    @include breakpoint(xl) {
+                        padding-block-start: auto;
+                        padding-inline-start: 100px;
+                    }
+
+                    .subtitle {
+                        @extend %p-rel,
+                        %text-medium;
+                        color: $title-color;
+
+                        &::after {
+                            @extend %p-abs;
+                            content: "";
+                            height: 2px;
+                            width: 50px;
+                            top: 49%;
+                            left: 25%;
+                            background-color: $title-color;
+
+                            @include breakpoint (sm) {
+                                left: 17%
+                            }
+
+                            @include breakpoint (md) {
+                                left: 13%
+                            }
+
+                            @include breakpoint (lg) {
+                                left: 21%
+                            }
+
+                            @include breakpoint (xl) {
+                                left: 20%
+                            }
+
+                            @include breakpoint (xxl) {
+                                left: 17%
+                            }
+                        }
+                    }
+
+                    h2 {
+                        @extend %my-20;
+                    }
+
+                    p {
+                        @extend %mb-30;
+
+                        @include breakpoint(sm) {
+                            &:not(:first-child) {
+                                margin-bottom: 48px
+                            }
+                        }
+
+
+                    }
+
+                    .about-list {
+                        @extend %mb-30;
+
+                        @include breakpoint(sm) {
+                            column-count: 2;
+                            margin-bottom: 48px;
+                        }
+
+
+
+                        li {
+                            @extend %mb-15;
+
+                            @include breakpoint(sm) {
+                                &:nth-child(1) {
+                                    margin-bottom: 40px;
+                                }
+
+                                &:nth-child(3) {
+                                    margin-bottom: 40px;
+                                }
+                            }
+
+
+                            img {
+                                @extend %me-10;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    &--style2 {
+        .about {
+
+            &__thumb {
+                &-image {
+                    @include breakpoint(sm) {
+                        text-align: center
+                    }
+
+                    @include breakpoint(lg) {
+                        text-align: left
+                    }
+                }
+            }
+
+            &__content {
+                .section-header {
+                    @extend %mb-40;
+                }
+
+
+                &-item {
+                    @extend %d-flex,
+                    %mb-25,
+                    %align-i-start;
+                    gap: 15px;
+
+                    p {
+                        @extend %mb-0;
+                    }
+                }
+
+                a {
+                    @extend %mt-40;
+                }
+            }
+        }
+    }
+
+    &--style3 {
+        .about {
+            @extend %p-rel;
+
+            &__content {
+                .section-header {
+                    @extend %mb-40;
+                }
+
+                a {
+                    @extend %mt-40;
+                }
+            }
+
+            &__details {
+
+                @include breakpoint(sm) {
+                    column-count: 2;
+                    column-gap: 25px;
+                }
+
+                &-item {
+                    @extend %d-flex,
+                    %align-i-start;
+                    gap: 15px;
+
+                    &:nth-child(1) {
+                        @extend %mb-30;
+                    }
+
+                    &:nth-child(3) {
+                        @extend %mb-30;
+                    }
+
+                    @include breakpoint (max-sm) {
+                        &:not(:last-child) {
+                            margin-bottom: 30px;
+                        }
+
+                    }
+
+                }
+
+                &-text {
+                    h6 {
+                        @extend %text-semibold;
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                    }
+
+                }
+            }
+
+            // &__thumb{
+            //     @extend %p-rel;
+            // }
+
+            &__icon {
+                &-item {
+                    @extend %p-abs;
+
+                    &:nth-child(1) {
+                        // display: none;
+                        width: 100px;
+                        top: 0%;
+                        left: 0%;
+
+                        &.about__icon-item--animation {
+                            @include animation(left-right 2s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+                        }
+
+                        @include breakpoint(sm) {
+                            top: 8%;
+                        }
+
+                        @include breakpoint(lg) {
+                            top: 0%;
+                            width: 150px;
+                        }
+
+                        @include breakpoint(xl) {
+                            width: auto;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        // display: none;
+                        width: 80px;
+                        right: 0%;
+                        top: 0%;
+
+                        &.about__icon-item--animation {
+                            @include animation(floating 2s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+                        }
+
+                        @include breakpoint(sm) {
+                            width: 100px;
+                            right: 0%;
+                            top: 10%;
+                        }
+
+                        @include breakpoint(md) {
+                            width: 150px;
+                        }
+
+                        @include breakpoint(lg) {
+                            top: 4%;
+                            right: -11%;
+                        }
+
+                        @include breakpoint(xl) {
+                            right: 8%;
+                            top: 3%;
+                            width: auto;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    &--style4 {
+        @extend %p-rel;
+
+        .about {
+
+
+            &__content {
+                h2 {
+                    color: $brand-color-4;
+                    @extend %mb-20;
+                }
+
+                p {
+                    @extend %mb-30;
+
+                    @include breakpoint(sm) {
+                        &:not(:first-child) {
+                            @include font-size(18px);
+                            font-weight: 500;
+                            margin-bottom: 48px;
+                        }
+                    }
+
+
+                }
+
+                .about-list {
+                    @extend %mb-30;
+
+                    @include breakpoint(sm) {
+                        column-count: 2;
+                        margin-bottom: 48px;
+                    }
+
+
+
+                    li {
+                        @extend %mb-15;
+                        @include font-size(18px);
+                        color: $title-color;
+                        font-weight: 500;
+
+                        @include breakpoint(sm) {
+                            &:nth-child(1) {
+                                margin-bottom: 40px;
+                            }
+
+                            &:nth-child(3) {
+                                margin-bottom: 40px;
+                            }
+                        }
+
+
+                        img {
+                            @extend %me-10;
+                        }
+                    }
+                }
+            }
+
+            &__shape {
+                &-item {
+                    
+                    @extend %p-abs, %d-none;
+                    width: 100px;
+                    top: 15%;
+                    right: 8%;
+                    z-index: -1;
+
+                    @include animation(left-right 2s cubic-bezier(0.41, 0.15, 0.64, 0.86) infinite alternate);
+
+
+                    @include breakpoint(md) {
+                        display: block;
+                    }
+                    @include breakpoint(lg) {
+                        width: 150px;
+                        right: 2%;
+                    }
+
+                    @include breakpoint(xl) {
+                        top: 8%;
+                        right: 8%;
+                        width: auto;
+                    }
+                    @include breakpoint(xxl) {
+                        top: 15%;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    &--style5 {
+        .about {
+            &__thumb {
+                &-image {
+                    @extend %of-hidden;
+                    border-top-right-radius: 49%;
+                    border-top-left-radius: 49%;
+                    border-bottom-right-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                    background-color: #F2F3F5;
+                    object-fit: cover;
+                }
+
+                img {
+                    @extend %w-100;
+                    @include add-prefix(transition, $transition);
+                }
+
+                &:hover {
+                    img {
+                        @include add-prefix(transform, scale(1.05));
+                    }
+                }
+
+            }
+
+            &__counter {
+                @extend %d-flex,
+                %align-i-center,
+                %justify-between;
+                flex-wrap: wrap;
+                gap: 10px;
+                @include breakpoint(sm){ 
+                    flex-wrap: nowrap;
+                }
+
+
+            }
+        }
+    }
+}

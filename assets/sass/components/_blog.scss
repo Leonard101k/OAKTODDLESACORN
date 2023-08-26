@@ -1,0 +1,728 @@
+.blog {
+  @extend %of-hidden;
+
+  &--style1 {
+    .blog {
+      &__header {
+        @extend %d-flex,
+        %justify-between,
+        %align-i-center,
+        %mb-40;
+
+        @include breakpoint(lg) {
+          margin-block-end: 64px;
+        }
+
+        h2 {
+          @include breakpoint(max-sm) {
+            @include font-size(26px);
+            max-inline-size: 12ch;
+          }
+        }
+      }
+
+      &__item {
+        @extend %of-hidden;
+        @include add-prefix(transition, $transition);
+        background-color: $white-color;
+        border-radius: 0.5rem;
+        box-shadow: 8px 16px 30px 0px #9cbed91f;
+
+        // border: 1px solid rgba($theme-color, $alpha: .15);
+        // box-shadow: $shadow-sm;
+
+        &:hover {
+          box-shadow: -2px 8px 24px 0px #489cbe33;
+
+          .blog__thumb {
+            img {
+              @include add-prefix(transform, scale(1.09));
+            }
+          }
+        }
+
+        //style 2
+        &--style2 {
+          background-color: rgba($black-color, $alpha: 0.2);
+        }
+      }
+
+      &__thumb {
+        @extend %mb-15,
+        %p-rel,
+        %of-hidden;
+
+        img {
+          @extend %w-100;
+          @include add-prefix(transition, $transition);
+        }
+      }
+
+      &__content {
+        padding-inline: 25px;
+        padding-block-end: 25px;
+        padding-block-start: 15px;
+
+        @include breakpoint(lg) {}
+
+        h6 {
+          @extend %text-clamp-2,
+          %mb-25,
+          %mt-15;
+          font-weight: 600;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        &-bottom {
+          @extend %mt-15;
+
+          a {
+            color: $text-color-light;
+          }
+
+          &--border {
+            @extend %pt-25;
+            border-top: 1px solid rgba($brand-color-1, $alpha: 0.1);
+          }
+        }
+
+        .default-btn {
+          @extend %mt-10;
+        }
+      }
+
+      &__meta {
+        gap: 30px;
+
+        &-tag {
+          @extend %d-inline-block;
+          @include font-size(14px);
+          padding: 0.15rem 1rem;
+          border-radius: 50px;
+          color: $brand-color-1;
+          font-weight: 400;
+          text-transform: capitalize;
+          // background-color: rgba($brand-color-1, $alpha: .1);
+
+          &--cat1 {
+            background-color: $course-color-2;
+          }
+
+          &--cat2 {
+            background-color: $course-color-1;
+          }
+
+          &--cat3 {
+            background-color: $course-color-3;
+          }
+
+          &--cat4 {
+            background-color: $course-color-4;
+          }
+        }
+
+        &-comment {
+          @extend %p-rel;
+          color: $text-color;
+
+          span {
+            @include box(16px);
+            @include font-size(12px);
+            font-weight: 500;
+            display: inline-grid;
+            place-items: center;
+            background-color: $brand-color-1 !important;
+            color: $black-color;
+          }
+        }
+      }
+
+      &__view {
+        @extend %flex,
+        %justify-between,
+        %align-i-center,
+        %mb-30;
+        gap: 20px;
+
+        &-count {
+          p {
+            @extend %mb-0;
+            @include font-size(18px);
+            display: inline-flex;
+            align-items: center;
+
+            i,
+            svg {
+              @extend %me-10;
+              color: $brand-color-1;
+            }
+          }
+        }
+
+        &-search {
+          .form-control {
+            border-radius: 0.5rem;
+          }
+
+          .search-icon {
+            background-color: $brand-color-1;
+            padding-inline: 1rem;
+            border-color: transparent;
+            color: $white-color;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+
+      &__btn {
+        @extend %p-abs;
+        @include add-prefix(transition, $transition);
+        @include font-size(14px);
+        border-radius: 50px;
+        padding: 0.35rem 0.75rem;
+        background-color: rgba($black-color, $alpha: 0.3);
+        color: $white-color;
+        border: 1.5px solid transparent;
+
+        transform: translate(-50%, -50%);
+        position: absolute;
+        content: "";
+        top: 13%;
+        right: -1%;
+
+        &:hover {
+          background-color: darken($secondary-color-1, $amount: 5);
+          color: $white-color;
+        }
+
+        &--add {
+          background-color: rgba($black-color, $alpha: 0.3);
+          color: $white-color;
+        }
+
+        &--save {
+          background-color: rgba($black-color, $alpha: 0.3);
+          color: $white-color;
+
+          &:hover,
+          &.saved {
+            background-color: $secondary-color-1;
+            color: $title-color;
+          }
+        }
+      }
+
+      &__focus {
+        &-inner {
+          @extend %d-inline-flex,
+          %align-i-center;
+
+          img {
+            @extend %mx-5;
+          }
+        }
+      }
+    }
+  }
+
+  &--style2 {
+    .blog {
+      &__header {
+        @extend %d-flex,
+        %justify-between,
+        %align-i-center,
+        %mb-40;
+
+        @include breakpoint(lg) {
+          margin-block-end: 64px;
+        }
+
+        h2 {
+          @extend %text-clamp-2;
+          max-inline-size: 15ch;
+
+          @include breakpoint(md) {
+            max-inline-size: 17ch;
+          }
+
+          @include breakpoint(lg) {
+            @include breakpoint(max-lg) {
+              max-inline-size: 17ch;
+            }
+          }
+
+          @include breakpoint(xl) {
+            max-inline-size: 25ch;
+          }
+
+          @include breakpoint(max-sm) {
+            @include font-size(26px);
+            max-inline-size: 12ch;
+          }
+        }
+      }
+
+      &__wrapper {
+        .brand2-bg-1 {
+          @extend %of-hidden;
+          border-radius: 8px;
+        }
+      }
+
+      &__large {
+        background-color: $brand2-bg-1;
+        border-radius: 8px;
+
+        @include breakpoint(md) {
+          display: flex;
+          align-items: center;
+        }
+
+        &-thumb {
+          @extend %of-hidden;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
+
+          @include breakpoint(md) {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+          }
+
+          img {
+            @extend %w-100;
+            @include add-prefix(transition, $transition);
+          }
+        }
+
+        &-content {
+          @extend %p-15;
+
+          @include breakpoint(lg) {
+            padding: 25px;
+          }
+
+          @include breakpoint(md) {
+            max-width: 47%;
+          }
+
+          h5 {
+            @extend %mb-20,
+            %mt-10,
+            %text-clamp-2;
+            font-weight: 600;
+
+            a {
+              @include add-prefix(transition, $transition);
+            }
+
+            @include breakpoint(lg) {
+              margin-block-end: 25px;
+            }
+          }
+        }
+
+        &:hover {
+          .blog__large-thumb {
+            img {
+              @include add-prefix(transform, scale(1.05));
+            }
+          }
+
+          .blog__large-content {
+            h5 {
+              a {
+                color: $secondary-color-2;
+              }
+            }
+          }
+        }
+      }
+
+      &__author {
+        @extend %d-flex,
+        %align-i-center,
+        %mt-50;
+        gap: 20px;
+
+        @include breakpoint(max-mlg) {
+          margin-block-start: 20px;
+        }
+
+        @include breakpoint(lg) {
+          margin-block-start: 40px;
+        }
+
+        &-thumb {
+          img {
+            border-radius: 99px;
+            max-width: 60px;
+          }
+        }
+
+        &-designation {
+          h6 {
+            @extend %mb-5;
+            font-weight: 600;
+          }
+
+          span {
+            @extend %text-medium;
+            @include font-size(14px);
+            color: $text-color-light;
+          }
+        }
+      }
+
+      // single blog
+      &__item {
+        @extend %of-hidden;
+        @include add-prefix(transition, $transition);
+        background-color: $brand2-bg-1;
+        border-radius: 0.5rem;
+        box-shadow: 8px 16px 30px 0px #9cbed91f;
+
+        &:hover {
+          box-shadow: -2px 8px 24px 0px #489cbe33;
+
+          .blog__thumb {
+            img {
+              @include add-prefix(transform, scale(1.05));
+            }
+          }
+
+          .blog__content {
+            h5 {
+              a {
+                color: $secondary-color-2;
+              }
+            }
+          }
+        }
+
+        //style 2
+        &--style2 {
+          background-color: rgba($black-color, $alpha: 0.2);
+        }
+      }
+
+      &__thumb {
+        @extend %mb-15,
+        %p-rel,
+        %of-hidden;
+
+        img {
+          @extend %w-100;
+          @include add-prefix(transition, $transition);
+        }
+      }
+
+      &__content {
+        padding-inline: 15px;
+        padding-block-end: 15px;
+        padding-block-start: 10px;
+
+        @include breakpoint(xl) {
+          padding-inline: 25px;
+          padding-block-end: 25px;
+          padding-block-start: 10px;
+        }
+
+        h5 {
+          @extend %text-clamp-2,
+          %mb-25;
+          font-weight: 600;
+
+          a {
+            @include add-prefix(transition, $transition);
+          }
+        }
+      }
+
+      &__writer {
+        @extend %d-flex,
+        %align-i-center;
+        gap: 15px;
+
+        img {
+          border-radius: 99px;
+          max-width: 36px;
+        }
+
+        &-designation {
+          p {
+            @extend %mb-0,
+            %text-medium;
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+
+  &--style3 {
+    .blog {
+
+      // single blog
+      &__item {
+        @extend %of-hidden;
+        @include add-prefix(transition, $transition);
+        background-color: $brand3-bg-3;
+        box-shadow: 8px 16px 30px 0px #9cbed91f;
+
+        &:hover {
+          box-shadow: -2px 8px 24px 0px #489cbe33;
+
+          .blog__thumb {
+            img {
+              @include add-prefix(transform, scale(1.09));
+            }
+          }
+
+          .blog__content {
+            h5 {
+              a {
+                color: $secondary-color-2;
+              }
+            }
+          }
+        }
+      }
+
+      &__thumb {
+        @extend %mb-15,
+        %p-rel,
+        %of-hidden;
+
+        img {
+          @extend %w-100;
+          @include add-prefix(transition, $transition);
+        }
+      }
+
+      &__content {
+        padding-inline: 25px;
+        padding-block-end: 25px;
+        padding-block-start: 15px;
+
+        @include breakpoint(lg) {}
+
+        h6 {
+          @extend %text-clamp-2,
+          %mb-25,
+          %mt-15;
+          font-weight: 600;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        &-bottom {
+          @extend %mt-15;
+
+          a {
+            color: $text-color-light;
+          }
+
+          &--border {
+            @extend %pt-25;
+            border-top: 1px solid rgba($brand-color-1, $alpha: 0.1);
+          }
+        }
+      }
+
+      &__meta {
+        &-tag {
+          @extend %d-inline-block;
+          @include font-size(14px);
+          padding: 0.15rem 1rem;
+          color: $white-color;
+          font-weight: 400;
+          text-transform: capitalize;
+          background-color: $brand-color-3;
+        }
+      }
+    }
+  }
+
+  &--details {
+    .blog {
+      &__thumb {
+        @extend %of-hidden;
+        border-radius: 16px;
+
+        img {
+          @extend %w-100;
+          @include add-prefix(transition, $transition);
+          object-fit: cover;
+        }
+
+        &:hover {
+          img {
+            @include add-prefix(transform, scale(1.01));
+          }
+        }
+      }
+
+      &__meta {
+        @extend %py-25;
+        color: $text-color-light;
+
+        ul {
+          @extend %d-flex;
+          gap: 20px;
+
+          @include breakpoint(max-md) {
+            display: block;
+          }
+
+          @include breakpoint(xl) {
+            gap: 25px;
+          }
+
+          li {
+            @extend %d-inline-block;
+            text-transform: capitalize;
+
+            @include breakpoint(max-md) {
+              margin-block: 8px;
+              margin-inline-end: 10px;
+            }
+
+            a {
+              color: $text-color-light;
+            }
+
+            i,
+            svg {
+              margin-inline-end: 8px;
+
+              @include breakpoint(max-md) {
+                margin-inline-end: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      &__content {
+        @extend %mb-65;
+
+        h2 {
+          @extend %mb-20;
+        }
+
+        p {
+          color: $text-color;
+        }
+      }
+
+      &__tag {
+        .social-link-list {
+          @extend %mt-0,
+          %pb-25,
+          %d-flex;
+          flex-wrap: wrap;
+          gap: 10px;
+
+
+          @include breakpoint(lg) {
+            gap: 25px;
+          }
+
+          li {
+            a {
+              @extend %d-inline-flex,
+              %align-i-center;
+              @include add-prefix(transition, $transition);
+              background-color: $brand-color-1;
+              color: $white-color;
+              padding-block: 8px;
+              padding-inline: 24px;
+              border-radius: 8px;
+
+
+              i,
+              svg {
+                @extend %me-15;
+                @include font-size(22px);
+              }
+
+              &.facebook {
+                background: $facebook;
+              }
+
+              &.twitter {
+                background: $twitter;
+              }
+
+              &.linkedin {
+                background: $linkedin;
+              }
+
+              &:hover {
+                background-color: $title-color;
+                color: $white-color;
+              }
+            }
+          }
+        }
+
+        .tags {
+          @extend %pt-15;
+          @extend %m-0;
+          @extend %d-flex;
+          @extend %align-i-center;
+          gap: 24px;
+
+          li {
+            @extend %list-none;
+
+            a {
+              @extend %py-10,
+              %px-15;
+              color: $text-color;
+              background-color: $border-color;
+              @include add-prefix(transition, $transition);
+              outline: none;
+              border-radius: 8px;
+
+              &:hover {
+                background-color: $brand-color-1;
+                color: $white-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__two {
+    .blog {
+      &__meta {
+        @extend %pt-20;
+        @extend %mt-25;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+        border-bottom: none !important;
+        border-top: 1px solid black;
+      }
+    }
+  }
+
+  &.bg-primary {
+    .section__header {
+      h2 {
+        color: $white-color;
+      }
+    }
+  }
+}

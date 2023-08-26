@@ -1,0 +1,283 @@
+.categories {
+    @extend %of-hidden;
+
+    &--style1 {
+        padding-block-start: 220px;
+
+        @include breakpoint(sm) {
+            padding-block-start: 240px;
+        }
+
+        @include breakpoint(md) {
+            padding-block-start: 270px;
+        }
+
+        @include breakpoint(lg) {
+            padding-block-start: 420px;
+        }
+
+        .categories {
+            &__item {
+                &-inner {
+                    @extend %p-rel,
+                    %text-center,
+                    %of-hidden;
+                    object-fit: cover;
+
+
+                    img {
+                        transition: $transition;
+                    }
+
+                    &:hover {
+                        img {
+                            @include add-prefix (transform, scale(1.06));
+                        }
+                    }
+
+
+                }
+
+                &-content {
+                    a {
+                        @extend %text-center,
+                        %mt-20;
+                        color: $title-color;
+                        @include font-size(16px);
+
+                        @include breakpoint(lg) {
+                            font-size: 18px;
+                        }
+
+                        &:active,
+                        &:hover {
+                            text-decoration: underline !important;
+                        }
+                    }
+                }
+
+            }
+
+            &__thumb {
+                @extend %p-30,
+                %text-center;
+                border-radius: 16px;
+                transition: $transition;
+                max-width: 132px;
+                margin: auto auto 20px auto;
+
+                @include breakpoint (md) {
+                    padding: 35px;
+                }
+
+                &--cat1 {
+                    background-color: $course-color-1;
+                }
+
+                &--cat2 {
+                    background-color: $course-color-2;
+                }
+
+                &--cat3 {
+                    background-color: $course-color-3;
+                }
+            }
+        }
+
+    }
+
+    &--style2 {
+        .categories {
+            &__item {
+                @extend %d-flex;
+                gap: 15px;
+
+                &-inner {
+                    background-color: $brand2-bg-1;
+                    transition: $transition;
+                    border-radius: 8px;
+                    @extend %text-center,
+                    %mb-15,
+                    %py-25,
+                    %px-10;
+                    width: 100%;
+
+                    @include breakpoint(sm) {
+                        width: 245px;
+                    }
+
+                    img {
+                        @extend %mb-15;
+                    }
+
+
+
+                    &:hover {
+                        background-color: $white-color;
+                        box-shadow: -2px 8px 24px 0px #489CBE33;
+
+                        .categories__item-btn {
+                            background-color: $secondary-color-2;
+                            border: 1px solid $secondary-color-2;
+                        }
+
+                        i,
+                        svg {
+                            transform: rotate(-45deg);
+                            color: $white-color;
+                        }
+                    }
+
+                }
+
+                &-btn {
+                    @extend %d-grid,
+                    %place-i-center;
+                    @include box(40px);
+                    border-radius: 50px;
+                    margin: auto;
+                    z-index: 1;
+                    border: 1px solid $brand-color-4;
+                    color: $brand-color-4;
+
+                    i,
+                    svg {
+                        transition: 0.3s linear;
+                    }
+
+
+                }
+
+                &-content {
+                    h5 {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    &--style3 {
+        .categories {
+            &__header {
+                .style3 {
+                    @extend %mb-40;
+                }
+            }
+
+            &__item {
+                @extend %p-rel;
+
+                &-thumb {
+                    @extend %of-hidden,
+                    %mb-25;
+
+                    img {
+                        @extend %w-100;
+                        @include add-prefix(transition, $transition);
+                        object-fit: cover;
+                    }
+                }
+
+                &-content {
+                    @extend %text-center;
+
+                    a {
+                        @extend %text-semibold;
+                        color: $title-color;
+                        @include font-size(18px);
+
+                        @include breakpoint(lg) {
+                            font-size: 18px;
+                        }
+
+                    }
+                }
+
+                &:hover {
+
+                    .categories__item {
+                        &-thumb {
+                            img {
+                                @include add-prefix(transform, scale(1.05));
+                            }
+                        }
+
+                        &-content {
+                            a {
+                                text-decoration: underline !important;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    &--style4 {
+        padding-block-start: 220px;
+
+        @include breakpoint(sm) {
+            padding-block-start: 240px;
+        }
+
+        @include breakpoint(md) {
+            padding-block-start: 270px;
+        }
+
+        @include breakpoint(lg) {
+            padding-block-start: 420px;
+        }
+
+        .categories {
+            &__item {
+                &-inner {
+
+                    background-color: $brand-bg-4;
+                    border-radius: 15px;
+                    transition: $transition;
+                    @extend %text-center,
+                    %py-35,
+                    %px-25;
+
+                    @include breakpoint (lg) {
+                        padding-inline: 15px;
+                    }
+
+                    @include breakpoint (xl) {
+                        padding-inline: 20px;
+                    }
+
+                    @include breakpoint (xxl) {
+                        padding-inline: 25px;
+                    }
+
+                    img {
+                        @extend %text-center,
+                        %mb-25;
+                        border-radius: 99px;
+                    }
+
+                    &:hover {
+                        background-color: $secondary-color-4;
+                    }
+                }
+
+                &-content {
+                    h5 {
+                        font-family: $title-font1;
+                        @extend %mb-10;
+                    }
+
+                    p {
+                        @extend %mb-25;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+}
