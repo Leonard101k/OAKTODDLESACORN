@@ -15,9 +15,12 @@ Tags: LMS , Online learning managment.
 
 */
 
+
 /*=====================================================================*/
 
+
 /* @@@@@@@@@@@@@  Extend Property CSS start here  @@@@@@@@@@@@@@ */
+
 
 /*=========<<Flex property extends start>>=========*/
 
@@ -160,7 +163,9 @@ Tags: LMS , Online learning managment.
     text-transform: capitalize;
 }
 
+
 /*=========<<Flex property extends end>>=========*/
+
 
 /*=========<<Display property extends start>>=========*/
 
@@ -282,7 +287,9 @@ Tags: LMS , Online learning managment.
     display: inline-grid;
 }
 
+
 /*=========<<Display property extends end>>=========*/
+
 
 /*=========<<Position property extends start>>=========*/
 
@@ -405,7 +412,9 @@ Tags: LMS , Online learning managment.
     left: 50%;
 }
 
+
 /*=========<<Position property extends end>>=========*/
+
 
 /*=========<<Text property extends start>>=========*/
 
@@ -511,9 +520,12 @@ Tags: LMS , Online learning managment.
     font-weight: 700;
 }
 
+
 /*=========<<Text property extends end>>=========*/
 
+
 /*=========<<Margin & padding property extends start>>=========*/
+
 
 /*-------<< margin properties >>-------*/
 
@@ -560,6 +572,7 @@ ol {
     margin-block-end: 0;
 }
 
+
 /*-------<< margin properties >>-------*/
 
 .footer__about-inner img {
@@ -602,6 +615,7 @@ ol {
 .course--style1 .course__focus-inner img {
     margin-inline: 5px;
 }
+
 
 /*-------<< margin properties >>-------*/
 
@@ -651,6 +665,7 @@ ol {
     margin-inline-end: 10px;
 }
 
+
 /*-------<< margin properties >>-------*/
 
 .blog--style3 .blog__content-bottom,
@@ -680,6 +695,7 @@ ol {
 .blog--details .blog__tag .social-link-list li a svg {
     margin-inline-end: 15px;
 }
+
 
 /*-------<< margin properties >>-------*/
 
@@ -729,6 +745,7 @@ ol {
     margin-block: 20px;
 }
 
+
 /*-------<< margin properties >>-------*/
 
 .community--style2 .community__content-inner a.trk-btn,
@@ -758,6 +775,7 @@ ol {
 .banner__content--style2 .moto {
     margin-block-end: 25px;
 }
+
 
 /*-------<< margin properties >>-------*/
 
@@ -793,6 +811,7 @@ ol {
     margin-block: 30px;
 }
 
+
 /*-------<< margin properties >>-------*/
 
 .newsletter__content-inner a,
@@ -806,6 +825,7 @@ ol {
 .banner__content--style1 h1 {
     margin-block-end: 35px;
 }
+
 
 /*-------<< margin properties >>-------*/
 
@@ -834,7 +854,9 @@ ol {
     margin-block-end: 40px;
 }
 
+
 /*-------<< margin properties >>-------*/
+
 
 /*-------<< margin properties >>-------*/
 
@@ -848,13 +870,16 @@ ol {
     margin-block-end: 50px;
 }
 
+
 /*-------<< margin properties >>-------*/
+
 
 /*-------<< margin properties >>-------*/
 
 .account__header p {
     margin-block-end: 60px;
 }
+
 
 /*-------<< margin properties >>-------*/
 
@@ -871,23 +896,31 @@ ol {
     margin-block-end: 65px;
 }
 
+
 /*-------<< margin properties >>-------*/
 
 .sidebar__comment .body ul li .comment--reply {
     margin-block-start: 70px;
 }
 
-/*-------<< margin properties >>-------*/
 
 /*-------<< margin properties >>-------*/
 
-/*-------<< margin properties >>-------*/
 
 /*-------<< margin properties >>-------*/
 
-/*-------<< margin properties >>-------*/
 
 /*-------<< margin properties >>-------*/
+
+
+/*-------<< margin properties >>-------*/
+
+
+/*-------<< margin properties >>-------*/
+
+
+/*-------<< margin properties >>-------*/
+
 
 /*------<< Paddings >>---------*/
 
@@ -1124,7 +1157,9 @@ ol {
     padding-block-start: 100px;
 }
 
+
 /*=========<<Margin property extends end>>=========*/
+
 
 /*=========<<overflow property extends start>>=========*/
 
@@ -1276,7 +1311,9 @@ ol {
     overflow: hidden;
 }
 
+
 /*=========<<overflow property extends end>>=========*/
+
 
 /*=========<<Cursor property extends start>>=========*/
 
@@ -1286,7 +1323,9 @@ ol {
     cursor: pointer;
 }
 
+
 /*=========<<Cursor property extends end>>=========*/
+
 
 /*=========<< Height-Width property extends start>>=========*/
 
@@ -1326,7 +1365,9 @@ ol {
     height: 100%;
 }
 
+
 /*=========<< Height-Width property extends end>>=========*/
+
 
 /*=========<< List Style property extends start>>=========*/
 
@@ -1338,7 +1379,9 @@ ol {
     list-style: none;
 }
 
+
 /*=========<< List Style property extends end>>=========*/
+
 
 /* @@@@@@@@@@@@@  Extend Property CSS Writing Now  @@@@@@@@@@@@@@ */
 
@@ -1377,6 +1420,7 @@ ol {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
 }
+
 
 /* @@@@@@@@@@@@@  aditional Property CSS Writing Now  @@@@@@@@@@@@@@ */
 
@@ -1580,10 +1624,13 @@ ol {
     padding: 50px;
 }
 
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
 
 /* Document
    ========================================================================== */
+
 
 /**
  * 1. Correct the line height in all browsers.
@@ -1597,8 +1644,10 @@ html {
     /* 2 */
 }
 
+
 /* Sections
    ========================================================================== */
+
 
 /**
  * Remove the margin in all browsers.
@@ -1608,6 +1657,7 @@ body {
     margin: 0;
 }
 
+
 /**
  * Render the `main` element consistently in IE.
  */
@@ -1615,6 +1665,7 @@ body {
 main {
     display: block;
 }
+
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -1625,8 +1676,10 @@ h1 {
     font-size: 2em;
 }
 
+
 /* Grouping content
    ========================================================================== */
+
 
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -1642,6 +1695,7 @@ hr {
     /* 2 */
 }
 
+
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
@@ -1654,8 +1708,10 @@ pre {
     /* 2 */
 }
 
+
 /* Text-level semantics
    ========================================================================== */
+
 
 /**
  * Remove the gray background on active links in IE 10.
@@ -1664,6 +1720,7 @@ pre {
 a {
     background-color: transparent;
 }
+
 
 /**
  * 1. Remove the bottom border in Chrome 57-
@@ -1679,6 +1736,7 @@ abbr[title] {
     /* 2 */
 }
 
+
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
@@ -1687,6 +1745,7 @@ b,
 strong {
     font-weight: bolder;
 }
+
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -1702,6 +1761,7 @@ samp {
     /* 2 */
 }
 
+
 /**
  * Add the correct font size in all browsers.
  */
@@ -1709,6 +1769,7 @@ samp {
 small {
     font-size: 80%;
 }
+
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
@@ -1731,8 +1792,10 @@ sup {
     top: -0.5em;
 }
 
+
 /* Embedded content
    ========================================================================== */
+
 
 /**
  * Remove the border on images inside links in IE 10.
@@ -1742,8 +1805,10 @@ img {
     border-style: none;
 }
 
+
 /* Forms
    ========================================================================== */
+
 
 /**
  * 1. Change the font styles in all browsers.
@@ -1765,6 +1830,7 @@ textarea {
     /* 2 */
 }
 
+
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -1775,6 +1841,7 @@ input {
     /* 1 */
     overflow: visible;
 }
+
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -1787,6 +1854,7 @@ select {
     text-transform: none;
 }
 
+
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
@@ -1797,6 +1865,7 @@ button,
 [type=submit] {
     -webkit-appearance: button;
 }
+
 
 /**
  * Remove the inner border and padding in Firefox.
@@ -1810,6 +1879,7 @@ button::-moz-focus-inner,
     padding: 0;
 }
 
+
 /**
  * Restore the focus styles unset by the previous rule.
  */
@@ -1821,6 +1891,7 @@ button:-moz-focusring,
     outline: 1px dotted ButtonText;
 }
 
+
 /**
  * Correct the padding in Firefox.
  */
@@ -1828,6 +1899,7 @@ button:-moz-focusring,
 fieldset {
     padding: 0.35em 0.75em 0.625em;
 }
+
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -1851,6 +1923,7 @@ legend {
     /* 1 */
 }
 
+
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
@@ -1859,6 +1932,7 @@ progress {
     vertical-align: baseline;
 }
 
+
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
@@ -1866,6 +1940,7 @@ progress {
 textarea {
     overflow: auto;
 }
+
 
 /**
  * 1. Add the correct box sizing in IE 10.
@@ -1880,6 +1955,7 @@ textarea {
     /* 2 */
 }
 
+
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
@@ -1888,6 +1964,7 @@ textarea {
 [type=number]::-webkit-outer-spin-button {
     height: auto;
 }
+
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
@@ -1901,6 +1978,7 @@ textarea {
     /* 2 */
 }
 
+
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
@@ -1908,6 +1986,7 @@ textarea {
 [type=search]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
+
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
@@ -1921,8 +2000,10 @@ textarea {
     /* 2 */
 }
 
+
 /* Interactive
    ========================================================================== */
+
 
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
@@ -1932,6 +2013,7 @@ details {
     display: block;
 }
 
+
 /*
  * Add the correct display in all browsers.
  */
@@ -1940,8 +2022,10 @@ summary {
     display: list-item;
 }
 
+
 /* Misc
    ========================================================================== */
+
 
 /**
  * Add the correct display in IE 10+.
@@ -1951,6 +2035,7 @@ template {
     display: none;
 }
 
+
 /**
  * Add the correct display in IE 10.
  */
@@ -1958,6 +2043,7 @@ template {
 [hidden] {
     display: none;
 }
+
 
 /**
  * Basic typography style for copy text
@@ -2082,6 +2168,7 @@ ul,
 ol {
     padding-left: 0;
 }
+
 
 /*===== keyframes for banner img ====*/
 
@@ -3162,18 +3249,18 @@ ol {
 }
 
 .header-wrapper .logo a img {
-    max-width: 100%;
+    max-width: 100px;
 }
 
 @media (max-width: 575px) {
     .header-wrapper .logo {
-        width: 160px;
+        width: 10px;
     }
 }
 
 @media (max-width: 1199px) and (min-width: 992px) {
     .header-wrapper .logo {
-        width: 200px;
+        width: 50px;
     }
 }
 
@@ -10341,5 +10428,6 @@ ol {
         margin-top: 55px;
     }
 }
+
 
 /*# sourceMappingURL=style.css.map */
