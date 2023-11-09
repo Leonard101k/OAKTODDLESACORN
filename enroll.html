@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OakToddles Acorn</title>
+
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/lightcase.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+
+
+    <!-- main css for template -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: max-content;
+            margin: 0 auto;
+        }
+        
+        .form-column {
+            width: 100%;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        label {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        input,
+        select {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        
+        .gender {
+            display: inline-flex;
+        }
+        
+        .gender label,
+        .gender input {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 0px;
+        }
+        
+        .medical label,
+        .medical input {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 0px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        @media(min-width: 768px) {
+            .form-column {
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ===============>> Preloader start here <<================= -->
+
+    <div class="preloader preloader--style4">
+        <div class="preloader__book">
+            <div class="inner">
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="middle"></div>
+            </div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <!-- ===============>> Preloader end here <<================= -->
+
+
+    <!-- ===============>> Header section start here <<================= -->
+    <header class="header-section brand-4 home4">
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="header-start header-start--style1">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="assets/images/main options/20230826_062636_0001-removebg-preview.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="menu-area">
+                            <ul class="menu menu--style1">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                    <li>
+                                        <a href="vision.html">Vision</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#0">Curriculum</a>
+                                        <ul class="submenu">
+                                            <li><a href="nursery.html">Nursery</a></li>
+                                            <li><a href="preschool.html">Pre-School</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="activities.html">Activities</a>
+                                        <ul class="submenu">
+                                            <li><a href="0#">-</a></li>
+                                            <li><a href="0#">-</a></li>
+                                        </ul>
+                                    </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="header-end">
+                        <div class="menu-area">
+                            <div class="header-btn">
+                                <a href="signup.html" class="trk-btn trk-btn--rounded trk-btn--primary4 trk-btn--style2">
+                                    <span>Contact Us</span>
+                                </a>
+                            </div>
+
+                            <!-- toggle icons -->
+                            <div class="header-bar d-xl-none home4">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===============>> Header section end here <<================= -->
+
+
+
+    <!-- ===============>> Banner section start here <<================= -->
+    <section class="banner brand-4 bg--cover" style="background-image:url(assets/images/banner/shape1.png)">
+        <div class="container">
+            <div class="banner__wrapper">
+                <!-- banner content -->
+                <div class="banner__content banner__content--style1" data-aos="zoom-in" data-aos-duration="1000">
+                    <h1 class="title-font1">OakToddles Registraion Form</h1>
+                    <!--FORM SECTION-->
+
+
+
+                    <!--END OF FORM SECTION-->
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <form id "enrollmentForm;">
+            <div class="form-container">
+                <div class="form-column">
+                    <h2 style="padding-bottom:60px">Pupil Information</h2>
+                    <label for="fullName">Child's Legal Names:</label>
+                    <input type="text" id="fullName" name="fullName" required><br>
+                    <label for="preferedName">Child's Preferred Name:</label>
+                    <input type="text" id="preferedName" name="preferedName" required><br>
+                    <label for="Address">Home Address:</label>
+                    <input type="text" id="Address" name="Address" required><br>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required><br><br>
+                    <div class="gender">
+                        <label>Gender:</label>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label><br>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="medical">
+                        <label>Does your child have any medical concerns:</label><br>
+                        <label>Yes<input type="radio" id="yes" name="yes" value="yes">
+                        </label>
+                        <label>No<input type="radio" id="no" name="no" value="no">
+                        </label>
+                    </div>
+                    <i>(if yes, please provide medical information below)</i>
+                    <input type="text" id="text" name="text" required><br> </div>
+
+                <div class="form-column">
+                    <h2>Parent/Guardian Information</h2>
+                    <label for="parent1Name">Parent/Guardian 1 Name:</label>
+                    <input type="text" id="parent1Name" name="parent1Name" required><br>
+                    <label for="parent1Relation">Relationship to Pupil:</label>
+                    <input type="text" id="parent1Relation" name="parent1Relation" required><br>
+                    <label for="parent1Contact">Contact Number:</label>
+                    <input type="tel" id="parent1Contact" name="parent1Contact" required><br>
+                    <label for="parent1Email">Email Address:</label>
+                    <input type="email" id="parent1Email" name="parent1Email" required><br>
+
+                    <label for="parent2Name">Parent/Guardian 2 Name:</label>
+                    <input type="text" id="parent2Name" name="parent2Name"><br>
+                    <label for="parent2Relation">Relationship to Pupil:</label>
+                    <input type="text" id="parent2Relation" name="parent2Relation"><br>
+                    <label for="parent2Contact">Contact Number:</label>
+                    <input type="tel" id="parent2Contact" name="parent2Contact"><br>
+                    <label for="parent2Email">Email Address:</label>
+                    <input type="email" id="parent2Email" name="parent2Email"><br>
+                </div>
+            </div>
+            <div class="btn-group justify-content-center">
+                <button href="thanks.html" type="button" class="trk-btn trk-btn--rounded trk-btn--primary4" onclick="validateform()">Submit
+                <span><i class="fa-solid fa-arrow-right"></i></span> </button>
+            </div>
+        </form>
+    </section>
+    <br>
+    <div class="footer__bottom">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="footer__end">
+                    <div class="footer__end-copyright">
+                        <p class=" mb-0">OakToddles Acorn © 2023 Copyright |All Rights Reserved </p>
+                    </div>
+                    <div>
+                        <ul class="footer__end-links">
+                            <a href="#">Designed by LeoTech with ❤️</a>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="footer__end-links">
+                            <li class="footer__end-item">
+                                <a href="#"> Terms & Conditions </a>
+                            </li>
+                            <li class="footer__end-item">
+                                <a href="#"> Privacy Policy </a>
+                            </li>
+                            <li class="footer__end-item">
+                                <a href="#"> Sitemap </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </footer>
+    <!-- ===============>> footer end here <<================= -->
+
+
+
+
+    <!-- scrollToTop start here -->
+    <a href="#" class="scrollToTop scrollToTop--home4"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+    <!-- scrollToTop ending here -->
+
+    <script>
+        function validateForm() {
+            var form = document.getElementById('enrollmentForm');
+            var inputs = form.getElementsByTagName('input');
+            var valid = true;
+
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].hasAttribute('required') && !inputs[i].value) {
+                    valid = false;
+                    alert('Please fill out all required fields.');
+                    break;
+                }
+            }
+
+            if (valid) {
+                form.submit();
+            }
+        }
+    </script>
+
+    <!-- vendor plugins -->
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/fslightbox.js"></script>
+    <script src="assets/js/purecounter_vanilla.js"></script>
+
+
+    <script src="assets/script.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+
+</body>
+
+</html>
