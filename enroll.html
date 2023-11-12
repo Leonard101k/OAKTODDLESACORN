@@ -77,6 +77,11 @@
             margin-bottom: 0px;
         }
         
+        .warning {
+            color: red;
+            font-size: 0.8em;
+        }
+        
         .medical label,
         .medical input {
             display: inline-block;
@@ -231,7 +236,7 @@
         </div>
     </section>
     <section>
-        <form id "enrollmentForm;">
+        <form id "enrollmentForm;" action="process_form.php" method="post">
             <div class="form-container">
                 <div class="form-column">
                     <h2 style="padding-bottom:60px">Pupil Information</h2>
@@ -249,8 +254,6 @@
                         <label for="male">Male</label>
                         <input type="radio" id="female" name="gender" value="female">
                         <label for="female">Female</label>
-                        <input type="radio" id="other" name="gender" value="other">
-                        <label for="other">Other</label><br>
                     </div>
                     <br>
                     <br>
@@ -262,7 +265,7 @@
                         </label>
                     </div>
                     <i>(if yes, please provide medical information below)</i>
-                    <input type="text" id="text" name="text" required><br> </div>
+                    <input type="text" id="text" name="text"><br> </div>
 
                 <div class="form-column">
                     <h2>Parent/Guardian Information</h2>
@@ -286,7 +289,7 @@
                 </div>
             </div>
             <div class="btn-group justify-content-center">
-                <button href="thanks.html" type="button" class="trk-btn trk-btn--rounded trk-btn--primary4" onclick="validateform()">Submit
+                <button href="thanks.html" type="submit" class="trk-btn trk-btn--rounded trk-btn--primary4" onclick="validateform()">Submit
                 <span><i class="fa-solid fa-arrow-right"></i></span> </button>
             </div>
         </form>
@@ -353,6 +356,12 @@
             }
         }
     </script>
+    <script>
+        function printForm() {
+            window.print();
+        }
+    </script>
+
 
     <!-- vendor plugins -->
 
