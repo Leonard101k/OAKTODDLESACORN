@@ -236,7 +236,15 @@
         </div>
     </section>
     <section>
-        <form id "enrollmentForm;" action="process_form.php" method="post">
+        <form id "enrollmentForm;" action="https://formsubmit.co/leonardkachumi@gmail.com" method="POST">
+            <!--Honeypoot-->
+            <input type="text" name="_honey" style="display: none;">
+
+            <!--Disable Captcha-->
+            <input type="hidden" name="_captcha" value="false">
+
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html">
+
             <div class="form-container">
                 <div class="form-column">
                     <h2 style="padding-bottom:60px">Pupil Information</h2>
